@@ -1,0 +1,6 @@
+framework module Pods_Overtime_OvertimeUITests {
+  umbrella header "Pods-Overtime-OvertimeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
