@@ -13,6 +13,7 @@ pod 'Firebase/Storage'
 pod 'Firebase/Database'
 pod 'Firebase/Firestore'
 pod 'FirebaseFirestoreSwift'
+pod 'SDWebImage'
 
   target 'OvertimeTests' do
     inherit! :search_paths

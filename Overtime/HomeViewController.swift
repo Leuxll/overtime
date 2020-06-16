@@ -7,13 +7,73 @@
 //
 
 import UIKit
+import Firebase
+import SDWebImage
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    private var posts =  [Post]()
+    private var postsCollectionRef: CollectionReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
         setUpNavBar()
+        postsCollectionRef = Firestore.firestore().collection("posts")
+        listPost()
+        
+    }
+    
+    func listPost() {
+        
+        postsCollectionRef.getDocuments { (snapshot, error) in
+            
+            guard let snap = snapshot else {return}
+            for document in snap.documents {
+                
+                let data = document.data()
+                let playerName = data["playerName"] as? String
+                let difficulty = data["difficulty"] as? String
+                let imageUrl = data["imageUrl"] as? String
+                let description = data["description"] as? String
+                let points = data["points"] as? String
+                let documentId = document.documentID
+                
+                self.posts.append(Post(imageUrl: imageUrl, playerName: playerName, points: points, difficulty: difficulty, description: description))
+                self.collectionView.reloadData()
+                
+            }
+            
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return posts.count
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PostCell {
+            
+            cell.imageView.sd_setImage(with: URL(string: posts[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "Default_Image_Thumbnail.png"))
+            cell.difficultyLabel.text = posts[indexPath.row].difficulty
+            cell.nameLabel.text = posts[indexPath.row].playerName
+            cell.pointsLabel.text = posts[indexPath.row].points
+            cell.configureCell()
+            return cell
+            
+        } else {
+            
+            return UICollectionViewCell()
+            
+        }
         
     }
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E198A01249769590023AF62 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E198A00249769590023AF62 /* Post.swift */; };
+		0E198A0524976F360023AF62 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E198A0424976F360023AF62 /* PostCell.swift */; };
+		0E198A432498566A0023AF62 /* ScaledHeightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E198A422498566A0023AF62 /* ScaledHeightImageView.swift */; };
 		0E2C2C9624949D0A0001A54B /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC6EB8C2493D2BC00098180 /* Poppins-Regular.ttf */; };
 		0E2C2C982494A2150001A54B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C2C972494A2150001A54B /* SignUpViewController.swift */; };
 		0E2C2C9A2494DA500001A54B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C2C992494DA500001A54B /* Constants.swift */; };
@@ -29,7 +32,7 @@
 		0EC6EB9E2493D43000098180 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC6EB962493D2BF00098180 /* Poppins-ExtraBold.ttf */; };
 		0EC6EB9F2493D43200098180 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC6EB992493D2C000098180 /* Poppins-ExtraBoldItalic.ttf */; };
 		0EC6EBA12493DB2500098180 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC6EBA02493DB2500098180 /* Utilities.swift */; };
-		0EE014782494FE330047A259 /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE014772494FE330047A259 /* tabBarViewController.swift */; };
+		0EE014782494FE330047A259 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE014772494FE330047A259 /* TabBarViewController.swift */; };
 		481BB82616206442AD0AF1F2 /* Pods_Overtime_OvertimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943CB0FFF89CBAF43C7B4FA1 /* Pods_Overtime_OvertimeUITests.framework */; };
 		7114292D583C8EF2B51427C1 /* Pods_OvertimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E618429E787AF3C91A36E0 /* Pods_OvertimeTests.framework */; };
 		AB4C22228ACEEE1C6D1FC36A /* Pods_Overtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4331E84B07F8C65E9CC9443D /* Pods_Overtime.framework */; };
@@ -55,6 +58,9 @@
 /* Begin PBXFileReference section */
 		02B8FCBBB98C5B6CBAEB68B6 /* Pods-Overtime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime.debug.xcconfig"; path = "Target Support Files/Pods-Overtime/Pods-Overtime.debug.xcconfig"; sourceTree = "<group>"; };
 		0A1DB4A42895C70F538E320C /* Pods-Overtime-OvertimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime-OvertimeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Overtime-OvertimeUITests/Pods-Overtime-OvertimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0E198A00249769590023AF62 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0E198A0424976F360023AF62 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		0E198A422498566A0023AF62 /* ScaledHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledHeightImageView.swift; sourceTree = "<group>"; };
 		0E2C2C972494A2150001A54B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0E2C2C992494DA500001A54B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0E2C2C9D2494DAD30001A54B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +100,7 @@
 		0EC6EB982493D2C000098180 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		0EC6EB992493D2C000098180 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		0EC6EBA02493DB2500098180 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		0EE014772494FE330047A259 /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
+		0EE014772494FE330047A259 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1DAA219A9F83224FB731C827 /* Pods-Overtime-OvertimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime-OvertimeUITests.release.xcconfig"; path = "Target Support Files/Pods-Overtime-OvertimeUITests/Pods-Overtime-OvertimeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4331E84B07F8C65E9CC9443D /* Pods_Overtime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Overtime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E618429E787AF3C91A36E0 /* Pods_OvertimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvertimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,7 +172,10 @@
 				0EC6EB852493C72700098180 /* TabBarCustomizations.swift */,
 				0E2C2C972494A2150001A54B /* SignUpViewController.swift */,
 				0EB739052493607F00F24E1F /* Main.storyboard */,
-				0EE014772494FE330047A259 /* tabBarViewController.swift */,
+				0E198A422498566A0023AF62 /* ScaledHeightImageView.swift */,
+				0E198A0424976F360023AF62 /* PostCell.swift */,
+				0E198A00249769590023AF62 /* Post.swift */,
+				0EE014772494FE330047A259 /* TabBarViewController.swift */,
 				0E2C2C992494DA500001A54B /* Constants.swift */,
 				0EC6EBA02493DB2500098180 /* Utilities.swift */,
 				0EB739082493608100F24E1F /* Assets.xcassets */,
@@ -500,14 +509,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EC6EBA12493DB2500098180 /* Utilities.swift in Sources */,
+				0E198A432498566A0023AF62 /* ScaledHeightImageView.swift in Sources */,
 				0E2C2C982494A2150001A54B /* SignUpViewController.swift in Sources */,
 				0EB739022493607F00F24E1F /* SignInViewController.swift in Sources */,
 				0E2C2C9E2494DAD30001A54B /* HomeViewController.swift in Sources */,
 				0EB738FE2493607F00F24E1F /* AppDelegate.swift in Sources */,
 				0EC6EB862493C72700098180 /* TabBarCustomizations.swift in Sources */,
-				0EE014782494FE330047A259 /* tabBarViewController.swift in Sources */,
+				0EE014782494FE330047A259 /* TabBarViewController.swift in Sources */,
 				0EB739002493607F00F24E1F /* SceneDelegate.swift in Sources */,
+				0E198A0524976F360023AF62 /* PostCell.swift in Sources */,
 				0E2C2C9A2494DA500001A54B /* Constants.swift in Sources */,
+				0E198A01249769590023AF62 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

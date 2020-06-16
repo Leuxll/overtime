@@ -8,13 +8,18 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class SignInViewConttroller: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var errorTextView: UITextView!
+    
+    private var posts = [Post]()
+    private var postsCollectionRef: CollectionReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +68,7 @@ class SignInViewConttroller: UIViewController {
     
     func transition() {
         
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? tabBarViewController
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? TabBarViewController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
