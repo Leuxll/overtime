@@ -24,6 +24,8 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         setUpUI()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         
     }
     
@@ -134,7 +136,7 @@ class SignUpViewController: UIViewController {
                     let db = Firestore.firestore()
                     
                     
-                    db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "uid": result!.user.uid ]) { (error) in
+                    db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "uid": result!.user.uid, "points": 0,"questionsAnswered": 0]) { (error) in
                         
                         
                         if error != nil {
@@ -164,10 +166,16 @@ class SignUpViewController: UIViewController {
     
     func transition() {
         
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? TabBarViewController
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as? TabBarController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
         
     }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
 }

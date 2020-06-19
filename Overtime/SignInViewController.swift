@@ -24,6 +24,8 @@ class SignInViewConttroller: UIViewController {
         super.viewDidLoad()
         
         setUpUI()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
         
     }
     
@@ -68,11 +70,16 @@ class SignInViewConttroller: UIViewController {
     
     func transition() {
         
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? TabBarViewController
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as? TabBarController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
         
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     

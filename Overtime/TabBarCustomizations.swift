@@ -7,7 +7,6 @@
 //
 
 import UIKit
-@IBDesignable
 class TabBarCustomizations: UITabBar {
 
     override open func sizeThatFits(_ size: CGSize) -> CGSize {

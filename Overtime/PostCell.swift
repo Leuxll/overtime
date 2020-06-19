@@ -27,17 +27,9 @@ class PostCell: UICollectionViewCell {
         layer.cornerRadius = 40.0
         
         nameLabel.numberOfLines = 0
-        difficultyLabel.backgroundColor = UIColor(red: 109/255, green: 212/255, blue: 0, alpha: 1)
-        difficultyLabel.textAlignment = .center
-        difficultyLabel.textColor = .white
-        difficultyLabel.layer.cornerRadius = 14.0
-        difficultyLabel.layer.masksToBounds = true
         
-        pointsLabel.backgroundColor = UIColor(red: 247/255, green: 181/255, blue: 0, alpha: 1)
-        pointsLabel.textAlignment = .center
-        pointsLabel.textColor = .white
-        pointsLabel.layer.cornerRadius = 14.0
-        pointsLabel.layer.masksToBounds = true
+        Utilities.difficultyLabel(difficultyLabel)
+        Utilities.pointsLabel(pointsLabel)
         
     }
     

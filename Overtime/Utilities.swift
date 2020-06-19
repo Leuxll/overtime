@@ -35,5 +35,26 @@ class Utilities {
         return passwordTest.evaluate(with: password)
     }
     
+    static func difficultyLabel(_ label:UILabel) {
+        
+        label.backgroundColor = UIColor(red: 109/255, green: 212/255, blue: 0, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .white
+        label.layer.cornerRadius = 14.0
+        label.layer.masksToBounds = true
+        label.font = UIFont(name: "Poppins-Bold", size: 12)
+        
+    }
+    
+    static func pointsLabel(_ label:UILabel) {
+        
+        label.backgroundColor = UIColor(red: 247/255, green: 181/255, blue: 0, alpha: 1)
+        label.textAlignment = .center
+        label.textColor = .white
+        label.layer.cornerRadius = 14.0
+        label.layer.masksToBounds = true
+        label.font = UIFont(name: "Poppins-Bold", size: 12)
+        
+    }
 
 }

@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     private var posts =  [Post]()
     private var postsCollectionRef: CollectionReference!
+    private var usersCollectionRef: CollectionReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.dataSource = self
         setUpNavBar()
         postsCollectionRef = Firestore.firestore().collection("posts")
+        usersCollectionRef = Firestore.firestore().collection("users")
         listPost()
         
     }
@@ -102,10 +104,28 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if let image = getImageFrom(gradientLayer: gradient) {
                 navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
             }
+            
+            let label = UILabel()
+            label.textColor = .white
+            label.text = "Welcome"
+            label.font = UIFont(name: "Poppins-Bold", size: 27)
+            navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
+            
         }
-        
+    
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailedViewController
+        
+        detailViewController.imageUrl = posts[indexPath.row].imageUrl!
+        detailViewController.detailedDescription = posts[indexPath.row].description!
+        detailViewController.playerName = posts[indexPath.row].playerName!
+        
+        view.window?.rootViewController = detailViewController
+        view.window?.makeKeyAndVisible()
+        
+    }
 
 }
