@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         setUpUI()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
     }
@@ -136,7 +136,7 @@ class SignUpViewController: UIViewController {
                     let db = Firestore.firestore()
                     
                     
-                    db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "uid": result!.user.uid, "points": 0,"questionsAnswered": 0]) { (error) in
+                    db.collection("users").document((result?.user.uid)!).setData(["firstName":firstName, "lastName":lastName, "uid": result!.user.uid, "points": 0,"questionsAnswered": 0]) { (error) in
                         
                         
                         if error != nil {

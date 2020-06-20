@@ -28,6 +28,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().titleTextAttributes = navigationAttributes as [NSAttributedString.Key : Any]
         UINavigationBar.appearance().alignmentRect(forFrame: CGRect(x: 37, y: 33, width: 321, height: 63))
+        
+        let authListener = Auth.auth().addStateDidChangeListener { (auth, user) in
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            if user != nil {
+                
+                let homeViewController = storyboard.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as? TabBarController
+                
+                self.window?.rootViewController = homeViewController
+                self.window?.makeKeyAndVisible()
+                
+            } else {
+                
+                let loginViewController = storyboard.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? SignInViewConttroller
+                
+                self.window?.rootViewController = loginViewController
+                self.window?.makeKeyAndVisible()
+                
+            }
+            
+        }
 
         return true
     }

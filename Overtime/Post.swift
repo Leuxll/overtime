@@ -15,5 +15,6 @@ struct Post {
     let points: String?
     let difficulty: String?
     let description: String?
+    let documentId: String?
     
 }

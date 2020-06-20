@@ -18,6 +18,7 @@
 		0E2C2C982494A2150001A54B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C2C972494A2150001A54B /* SignUpViewController.swift */; };
 		0E2C2C9A2494DA500001A54B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C2C992494DA500001A54B /* Constants.swift */; };
 		0E2C2C9E2494DAD30001A54B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C2C9D2494DAD30001A54B /* HomeViewController.swift */; };
+		0E3BB60E249C8C8E003C1997 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3BB60D249C8C8E003C1997 /* Question.swift */; };
 		0EB738FE2493607F00F24E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB738FD2493607F00F24E1F /* AppDelegate.swift */; };
 		0EB739002493607F00F24E1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB738FF2493607F00F24E1F /* SceneDelegate.swift */; };
 		0EB739022493607F00F24E1F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB739012493607F00F24E1F /* SignInViewController.swift */; };
@@ -36,6 +37,8 @@
 		0EC6EB9E2493D43000098180 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC6EB962493D2BF00098180 /* Poppins-ExtraBold.ttf */; };
 		0EC6EB9F2493D43200098180 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EC6EB992493D2C000098180 /* Poppins-ExtraBoldItalic.ttf */; };
 		0EC6EBA12493DB2500098180 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC6EBA02493DB2500098180 /* Utilities.swift */; };
+		0EDC3EBC249E3FA300D9D528 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC3EBB249E3FA300D9D528 /* User.swift */; };
+		0EDC3EBE249E620500D9D528 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC3EBD249E620500D9D528 /* QuestionViewController.swift */; };
 		481BB82616206442AD0AF1F2 /* Pods_Overtime_OvertimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943CB0FFF89CBAF43C7B4FA1 /* Pods_Overtime_OvertimeUITests.framework */; };
 		7114292D583C8EF2B51427C1 /* Pods_OvertimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E618429E787AF3C91A36E0 /* Pods_OvertimeTests.framework */; };
 		AB4C22228ACEEE1C6D1FC36A /* Pods_Overtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4331E84B07F8C65E9CC9443D /* Pods_Overtime.framework */; };
@@ -71,6 +74,7 @@
 		0E2C2C972494A2150001A54B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0E2C2C992494DA500001A54B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0E2C2C9D2494DAD30001A54B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0E3BB60D249C8C8E003C1997 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		0EB738FA2493607F00F24E1F /* Overtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB738FD2493607F00F24E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB738FF2493607F00F24E1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		0EC6EB982493D2C000098180 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		0EC6EB992493D2C000098180 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		0EC6EBA02493DB2500098180 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		0EDC3EBB249E3FA300D9D528 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0EDC3EBD249E620500D9D528 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		1DAA219A9F83224FB731C827 /* Pods-Overtime-OvertimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime-OvertimeUITests.release.xcconfig"; path = "Target Support Files/Pods-Overtime-OvertimeUITests/Pods-Overtime-OvertimeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4331E84B07F8C65E9CC9443D /* Pods_Overtime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Overtime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E618429E787AF3C91A36E0 /* Pods_OvertimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvertimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +155,6 @@
 			children = (
 				0EC6EB852493C72700098180 /* TabBarCustomizations.swift */,
 				0E198A422498566A0023AF62 /* ScaledHeightImageView.swift */,
-				0E198A00249769590023AF62 /* Post.swift */,
 				0E2C2C992494DA500001A54B /* Constants.swift */,
 				0EC6EBA02493DB2500098180 /* Utilities.swift */,
 			);
@@ -159,6 +164,7 @@
 		0E198A49249870F30023AF62 /* Viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				0EDC3EBD249E620500D9D528 /* QuestionViewController.swift */,
 				0E198A4E249890E00023AF62 /* DetailedViewController.swift */,
 				0E198A4C249871F80023AF62 /* LeaderboardsViewController.swift */,
 				0E198A4A249871510023AF62 /* ProfileViewController.swift */,
@@ -169,6 +175,16 @@
 				0E198A0424976F360023AF62 /* PostCell.swift */,
 			);
 			name = Viewcontrollers;
+			sourceTree = "<group>";
+		};
+		0E3BB60F249C8C9E003C1997 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0EDC3EBB249E3FA300D9D528 /* User.swift */,
+				0E198A00249769590023AF62 /* Post.swift */,
+				0E3BB60D249C8C8E003C1997 /* Question.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		0EB738F12493607F00F24E1F = {
@@ -203,6 +219,7 @@
 				0EB738FF2493607F00F24E1F /* SceneDelegate.swift */,
 				0E198A49249870F30023AF62 /* Viewcontrollers */,
 				0E198A48249870CA0023AF62 /* Misc */,
+				0E3BB60F249C8C9E003C1997 /* Models */,
 				0EB739082493608100F24E1F /* Assets.xcassets */,
 				0EB7390A2493608100F24E1F /* LaunchScreen.storyboard */,
 				0EE014762494DD6F0047A259 /* Plists */,
@@ -536,16 +553,19 @@
 				0E198A4D249871F80023AF62 /* LeaderboardsViewController.swift in Sources */,
 				0EC6EBA12493DB2500098180 /* Utilities.swift in Sources */,
 				0E198A4F249890E00023AF62 /* DetailedViewController.swift in Sources */,
+				0E3BB60E249C8C8E003C1997 /* Question.swift in Sources */,
 				0E198A432498566A0023AF62 /* ScaledHeightImageView.swift in Sources */,
 				0E2C2C982494A2150001A54B /* SignUpViewController.swift in Sources */,
 				0EB739022493607F00F24E1F /* SignInViewController.swift in Sources */,
 				0E198A4B249871510023AF62 /* ProfileViewController.swift in Sources */,
+				0EDC3EBE249E620500D9D528 /* QuestionViewController.swift in Sources */,
 				0E2C2C9E2494DAD30001A54B /* HomeViewController.swift in Sources */,
 				0EB738FE2493607F00F24E1F /* AppDelegate.swift in Sources */,
 				0EC6EB862493C72700098180 /* TabBarCustomizations.swift in Sources */,
 				0EB739002493607F00F24E1F /* SceneDelegate.swift in Sources */,
 				0E198A0524976F360023AF62 /* PostCell.swift in Sources */,
 				0E198A452498682C0023AF62 /* TabBarController.swift in Sources */,
+				0EDC3EBC249E3FA300D9D528 /* User.swift in Sources */,
 				0E2C2C9A2494DA500001A54B /* Constants.swift in Sources */,
 				0E198A01249769590023AF62 /* Post.swift in Sources */,
 			);

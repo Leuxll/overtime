@@ -25,7 +25,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.dataSource = self
         setUpNavBar()
         postsCollectionRef = Firestore.firestore().collection("posts")
-        usersCollectionRef = Firestore.firestore().collection("users")
         listPost()
         
     }
@@ -45,7 +44,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 let points = data["points"] as? String
                 let documentId = document.documentID
                 
-                self.posts.append(Post(imageUrl: imageUrl, playerName: playerName, points: points, difficulty: difficulty, description: description))
+                self.posts.append(Post(imageUrl: imageUrl, playerName: playerName, points: points, difficulty: difficulty, description: description, documentId: documentId))
                 self.collectionView.reloadData()
                 
             }
@@ -117,11 +116,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailedViewController
+        let detailViewController = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.detailedViewController) as! DetailedViewController
         
         detailViewController.imageUrl = posts[indexPath.row].imageUrl!
         detailViewController.detailedDescription = posts[indexPath.row].description!
         detailViewController.playerName = posts[indexPath.row].playerName!
+        detailViewController.documentId = posts[indexPath.row].documentId!
         
         view.window?.rootViewController = detailViewController
         view.window?.makeKeyAndVisible()

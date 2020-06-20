@@ -16,18 +16,12 @@ class DetailedViewController: UIViewController {
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
-    @IBAction func backButtonTapped(_ sender: Any) {
-        
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as? TabBarController
-        
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
-        
-    }
+
     
     var imageUrl = ""
     var playerName = ""
     var detailedDescription = ""
+    var documentId = ""
     
     
     override func viewDidLoad() {
@@ -45,6 +39,28 @@ class DetailedViewController: UIViewController {
         playerNameLabel.text = "About " + playerName
         playerNameLabel.font = UIFont(name: "Poppins-Bold", size: 24)
         
+        Utilities.styleFilledButton(startButton)
+        
     }
-
+    
+    @IBAction func startButtonTapped(_ sender: Any) {
+        
+        let questionViewController = storyboard?.instantiateViewController(identifier:  Constants.Storyboard.questionViewController) as? QuestionViewController
+        
+        questionViewController?.documentId = self.documentId
+        
+        view.window?.rootViewController = questionViewController
+        view.window?.makeKeyAndVisible()
+        
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as? TabBarController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+        
+    }
+    
 }
