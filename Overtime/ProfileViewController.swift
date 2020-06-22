@@ -40,15 +40,51 @@ class ProfileViewController: UIViewController {
             self.numOfTotalPoints.text = String(totalPoints)
         }
         
-        
+        setUpPointsLabels()
+        setUpUsernameLabel()
+        setUpQuestionsLabels()
+        setUpDeleteAccountButton()
         setUpNavBar()
         Utilities.styleFilledButton(signOutButton)
         
-        deleteAccountButton.tintColor = .red
-        deleteAccountButton.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 10)
         
-        userNameLabel.font = UIFont(name: "Poppins-Bold", size: 45)
-        userNameLabel.textColor = .white
+    }
+    
+    func setUpPointsLabels() {
+        
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(named: "sharp_star_rate_white_48pt.png")
+        let attachmentString = NSAttributedString(attachment: imageAttachment)
+        let completeText = NSMutableAttributedString(string: "")
+        completeText.append(attachmentString)
+        self.totalPointsImage.attributedText = completeText
+        self.totalPointsImage.textAlignment = .center
+        self.totalPointsImage.textColor = .white
+        
+        totalPointsImage.backgroundColor = UIColor(red: 247/255, green: 181/255, blue: 0/255, alpha: 1)
+        totalPointsImage.layer.cornerRadius = 42.0
+        totalPointsImage.layer.masksToBounds = true
+        totalPointsLabel.textColor = UIColor(red: 247/255, green: 181/255, blue: 0/255, alpha: 1)
+        totalPointsLabel.font = UIFont(name: "Poppins-Bold", size: 12)
+        totalPointsLabel.text = "Total Points"
+        totalPointsLabel.textAlignment = .center
+        numOfTotalPoints.textColor = .white
+        numOfTotalPoints.font = UIFont(name: "Poppins-Bold", size: 20)
+        numOfTotalPoints.textAlignment = .center
+        
+    }
+    
+    func setUpQuestionsLabels() {
+        
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(named: "sharp_equalizer_white_48pt.png")
+        let attachmentString = NSAttributedString(attachment: imageAttachment)
+        let completeText = NSMutableAttributedString(string: "")
+        completeText.append(attachmentString)
+        self.questionDoneImage.attributedText = completeText
+        self.questionDoneImage.textAlignment = .center
+        self.questionDoneImage.textColor = .white
+        
         
         questionDoneImage.backgroundColor = UIColor(red: 109/255, green: 212/255, blue: 0/255, alpha: 1)
         questionDoneImage.layer.cornerRadius = 42.0
@@ -61,16 +97,19 @@ class ProfileViewController: UIViewController {
         numOfQuestionDone.font = UIFont(name: "Poppins-Bold", size: 20)
         numOfQuestionDone.textAlignment = .center
         
-        totalPointsImage.backgroundColor = UIColor(red: 247/255, green: 181/255, blue: 0/255, alpha: 1)
-        totalPointsImage.layer.cornerRadius = 42.0
-        totalPointsImage.layer.masksToBounds = true
-        totalPointsLabel.textColor = UIColor(red: 247/255, green: 181/255, blue: 0/255, alpha: 1)
-        totalPointsLabel.font = UIFont(name: "Poppins-Bold", size: 12)
-        totalPointsLabel.text = "Total Points"
-        totalPointsLabel.textAlignment = .center
-        numOfTotalPoints.textColor = .white
-        numOfTotalPoints.font = UIFont(name: "Poppins-Bold", size: 20)
-        numOfTotalPoints.textAlignment = .center
+    }
+    
+    func setUpUsernameLabel() {
+        
+        userNameLabel.font = UIFont(name: "Poppins-Bold", size: 45)
+        userNameLabel.textColor = .white
+        
+    }
+    
+    func setUpDeleteAccountButton() {
+        
+        deleteAccountButton.tintColor = .red
+        deleteAccountButton.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 10)
         
     }
 

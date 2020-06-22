@@ -12,7 +12,7 @@ struct User {
     
     let firstName: String?
     let lastName: String?
-    let points: Int?
-    let questionsAnswered: Int?
+    let points: Int!
+    let questionsAnswered: Int!
     
 }

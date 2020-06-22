@@ -115,65 +115,6 @@
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
-    },
-    {
-      "filename" : "artboard_83.5@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "artboard_20.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "20x20"
-    },
-    {
-      "filename" : "artboard_40.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "40x40"
-    },
-    {
-      "filename" : "artboard_50.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "50x50"
-    },
-    {
-      "filename" : "artboard_50@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "size" : "50x50"
-    },
-    {
-      "filename" : "artboard_72.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "72x72"
-    },
-    {
-      "filename" : "artboard_72@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "size" : "72x72"
-    },
-    {
-      "filename" : "artboard_76.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "76x76"
-    },
-    {
-      "filename" : "artboard_76@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x",
-      "size" : "76x76"
-    },
-    {
-      "filename" : "artboard_1024.png",
-      "idiom" : "universal",
-      "scale" : "1x",
-      "size" : "1024x1024"
     }
   ],
   "info" : {

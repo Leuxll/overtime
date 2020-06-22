@@ -104,11 +104,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
             }
             
-            let label = UILabel()
-            label.textColor = .white
-            label.text = "Welcome"
-            label.font = UIFont(name: "Poppins-Bold", size: 27)
-            navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
+            let nameOfScreen = UILabel()
+            nameOfScreen.textColor = .white
+            nameOfScreen.text = "Hi, "
+            nameOfScreen.font = UIFont(name: "Poppins-Bold", size: 27)
+            navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: nameOfScreen)
             
         }
     
