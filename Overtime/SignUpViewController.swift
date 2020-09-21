@@ -42,13 +42,13 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleTextField(confirmPasswordTextField)
+        Utilities.styleFilledButton(signUpButton)
         firstNameTextField.attributedPlaceholder = NSAttributedString(string: "First Name", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
         lastNameTextField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
         confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string: "Confirm Password", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
         
-        Utilities.styleFilledButton(signUpButton)
         
     }
     
@@ -102,7 +102,7 @@ class SignUpViewController: UIViewController {
         
         if Utilities.isPasswordValid(passwordWithOutSpaces) == false {
             
-            return "Please make sure your passwords have 8 characters and contains at least 1 special character and number."
+            return "Please make sure your passwords have minimum 8 characters at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number and 1 Special Character."
             
         }
         

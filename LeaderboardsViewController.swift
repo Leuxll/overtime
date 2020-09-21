@@ -9,10 +9,17 @@
 import UIKit
 import Firebase
 
+struct LeaderboardUser {
+    
+    let firstName: String?
+    let points: Int!
+    
+}
+
 class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
-    var users = [User]()
+    var users = [LeaderboardUser]()
     var userCollectionRef: CollectionReference!
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,6 +33,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         listUser()
         
         tableView.backgroundColor = .black
+        print(users)
         
     }
     
@@ -38,11 +46,9 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
                 
                 let data = document.data()
                 let firstName = data["firstName"] as? String
-                let lastName = data["lastName"] as? String
                 let points = data["points"] as! Int
-                let questionsAnswered = data["questionsAnswered"] as! Int
                 
-                self.users.append(User(firstName: firstName, lastName: lastName, points: points, questionsAnswered: questionsAnswered))
+                self.users.append(LeaderboardUser(firstName: firstName, points: points))
                 self.tableView.reloadData()
             }
             
@@ -62,6 +68,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
             
         cell.firstName.text = users[indexPath.row].firstName
         cell.points.text = String(users[indexPath.row].points) + " points"
+        cell.points.font = UIFont(name: "Poppins-Bold", size: 12)
         cell.configureCell()
         return cell
     

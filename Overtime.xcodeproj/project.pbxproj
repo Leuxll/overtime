@@ -163,7 +163,7 @@
 			name = Misc;
 			sourceTree = "<group>";
 		};
-		0E198A49249870F30023AF62 /* Viewcontrollers */ = {
+		0E198A49249870F30023AF62 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				0EDC3EC924A0592200D9D528 /* QuestionsViewController.swift */,
@@ -177,7 +177,7 @@
 				0EDC3EC724A04CEC00D9D528 /* LeaderboardTableViewCell.swift */,
 				0E198A0424976F360023AF62 /* PostCell.swift */,
 			);
-			name = Viewcontrollers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		0E3BB60F249C8C9E003C1997 /* Models */ = {
@@ -220,7 +220,7 @@
 				0EB739052493607F00F24E1F /* Main.storyboard */,
 				0EB738FD2493607F00F24E1F /* AppDelegate.swift */,
 				0EB738FF2493607F00F24E1F /* SceneDelegate.swift */,
-				0E198A49249870F30023AF62 /* Viewcontrollers */,
+				0E198A49249870F30023AF62 /* ViewControllers */,
 				0E198A48249870CA0023AF62 /* Misc */,
 				0E3BB60F249C8C9E003C1997 /* Models */,
 				0EB739082493608100F24E1F /* Assets.xcassets */,

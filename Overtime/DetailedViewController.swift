@@ -45,7 +45,7 @@ class DetailedViewController: UIViewController {
     
     @IBAction func startButtonTapped(_ sender: Any) {
         
-        let questionViewController = storyboard?.instantiateViewController(identifier:  Constants.Storyboard.questionViewController) as? QuestionViewController
+        let questionViewController = storyboard?.instantiateViewController(identifier:  Constants.Storyboard.questionViewController) as? QuestionsViewController
         
         questionViewController?.documentId = self.documentId
         

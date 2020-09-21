@@ -106,7 +106,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             let nameOfScreen = UILabel()
             nameOfScreen.textColor = .white
-            nameOfScreen.text = "Hi, "
+            nameOfScreen.text = "Welcome"
             nameOfScreen.font = UIFont(name: "Poppins-Bold", size: 27)
             navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: nameOfScreen)
             
