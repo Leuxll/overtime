@@ -151,12 +151,19 @@ class ProfileViewController: UIViewController {
     
     @IBAction func signOutTapped(_ sender: Any) {
         
-        try! Auth.auth().signOut()
-        let signInViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? SignInViewConttroller
+        let alert = UIAlertController(title: "Signout of your account?", message: "Are you sure you want to signout of your account?", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            try! Auth.auth().signOut()
+            let signInViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? SignInViewConttroller
+            
+            self.view.window?.rootViewController = signInViewController
+            self.view.window?.makeKeyAndVisible()
+        }))
         
-        view.window?.rootViewController = signInViewController
-        view.window?.makeKeyAndVisible()
-        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
         
     }
     
