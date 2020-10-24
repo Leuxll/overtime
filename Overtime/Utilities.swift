@@ -11,6 +11,8 @@ import UIKit
 
 class Utilities {
     
+    static var questions = [Question]()
+    
     static func styleTextField(_ textfield: UITextField) {
         
         textfield.borderStyle = UITextField.BorderStyle.roundedRect

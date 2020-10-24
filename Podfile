@@ -14,6 +14,7 @@ pod 'Firebase/Database'
 pod 'Firebase/Firestore'
 pod 'FirebaseFirestoreSwift'
 pod 'SDWebImage'
+pod 'NVActivityIndicatorView'
 
   target 'OvertimeTests' do
     inherit! :search_paths

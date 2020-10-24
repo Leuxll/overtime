@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 
-
 class QuestionsViewController: UIViewController {
     
 
@@ -18,21 +17,18 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var answer2Button: UIButton!
     @IBOutlet weak var answer3Button: UIButton!
     @IBOutlet weak var answer4Button: UIButton!
-    
-    static var questions = [Question]()
-    static var questionCollectionRef: CollectionReference!
-    var documentId = ""
-    var string = ""
-    
+
+    let allQuestions = Utilities.questions
     var questionNumber: Int = 0
     var score: Int = 0
     var selectedAnswer: Int = 0
+    var totalPoints: Int = 0
+    var questionsAnswered: Int = 0
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.questions.append(Question(question: "Test", answer1: "Test", answer2: "Test", answer3: "Test", answer4: "Test", correctAnswer: "Test"))
-//        print(questions[0].question)
         
         Utilities.styleFilledButton(answer1Button)
         Utilities.styleFilledButton(answer2Button)
@@ -45,61 +41,73 @@ class QuestionsViewController: UIViewController {
         questionTextView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         questionTextView.backgroundColor = .black
         questionTextView.layer.cornerRadius = 24.0
-
-        QuestionsViewController.questionCollectionRef = Firestore.firestore().collection("posts").document(documentId).collection("questionAndAnswers")
         
-//        displayQuestions()
-//        updateQuestion()
-        storeQuestions()
+        updateQuestion()
+        
     }
-        
-    func storeQuestions() {
-            
-                QuestionsViewController.questionCollectionRef.getDocuments { (snapshot, error) in
-                        guard let snap = snapshot else {return}
-                    
-                        for document in snap.documents {
-                            let data = document.data()
-                            let question = data["question"] as! String
-                            let answer1 = data["answer1"] as! String
-                            let answer2 = data["answer2"] as! String
-                            let answer3 = data["answer3"] as! String
-                            let answer4 = data["answer4"] as! String
-                            let correctAnswer = data["correctAnswer"] as! String
-                            
-                            Test.questions.append(Question(question: question, answer1: answer1, answer2: answer2, answer3: answer3, answer4: answer4, correctAnswer: correctAnswer))
-                            self.string = answer1
-                        }
-                    print(Test.questions)
-            
-                    }
-        print(Test.questions)
-        print(string)
-        print("Hello")
-        }
-    
     
     @IBAction func answerPressed(_ sender: UIButton) {
-        if sender.tag == 1 {
-            print("answer1")
-        } else if sender.tag == 2 {
-            print("answer2")
-        } else if sender.tag == 3 {
-            print("answer3")
+        if sender.tag == selectedAnswer {
+            print("correct")
+            score += 1
+            print(score)
         } else {
-            print("answer4")
+            print("wrong")
         }
+        questionNumber += 1
+        updateQuestion()
     }
     
     func updateQuestion() {
         
+        if questionNumber <= Utilities.questions.count - 1 {
+            
+            questionTextView.text = allQuestions[questionNumber].question
+            answer1Button.setTitle(allQuestions[questionNumber].answer1, for: .normal)
+            answer2Button.setTitle(allQuestions[questionNumber].answer2, for: .normal)
+            answer3Button.setTitle(allQuestions[questionNumber].answer3, for: .normal)
+            answer4Button.setTitle(allQuestions[questionNumber].answer4, for: .normal)
+            selectedAnswer = Utilities.questions[questionNumber].correctAnswer
+            
+        } else {
+            let alert = UIAlertController(title: "Finished", message: "End of Quiz. Your score is: " + String(score), preferredStyle: .alert)
+            let restartAction = UIAlertAction(title: "Return Home", style: .default, handler: { action in
+                    self.updatingUserInfo()
+                    self.returnHome()})
+            alert.addAction(restartAction)
+            present(alert, animated: true, completion: nil)
+            
+        }
     }
     
-    func updateUI() {
-    
+    func updatingUserInfo() {
+        let currentUser = Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid)
+        currentUser.getDocument { [self] (document, err) in
+            let points : Int = document?.get("points") as! Int
+            let question: Int = document?.get("questionsAnswered") as! Int
+            
+            self.totalPoints = points + self.score
+            self.questionsAnswered = question + self.allQuestions.count
+            
+            print(self.totalPoints)
+            print(self.questionsAnswered)
+        }
+        
+//        currentUser.updateData(["points": totalPoints, "questionsAnswered": questionsAnswered])
+//        print("update")
+        
     }
-    func restartQuiz() {
+    
+    func returnHome() {
+        
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as? TabBarController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+        questionNumber = 0
+        score = 0
+        Utilities.questions.removeAll()
+//        print("home")
+    }
 
-    }
-    
 }

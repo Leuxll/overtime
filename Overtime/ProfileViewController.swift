@@ -22,8 +22,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var questionDoneImage: UILabel!
     @IBOutlet weak var totalPointsImage: UILabel!
     
-    private var users = [User]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -160,7 +158,7 @@ class ProfileViewController: UIViewController {
             self.view.window?.makeKeyAndVisible()
         }))
         
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
+        alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: { action in
             self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true)
