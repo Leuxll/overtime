@@ -127,7 +127,9 @@ class ProfileViewController: UIViewController {
         if let navigationBar = self.navigationController?.navigationBar {
             let gradient = CAGradientLayer()
             var bounds = navigationBar.bounds
-            bounds.size.height += UIApplication.shared.statusBarFrame.size.height
+            let window = UIApplication.shared
+                .windows.filter {$0.isKeyWindow}.first
+            bounds.size.height += window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
             gradient.frame = bounds
             gradient.colors = [UIColor(red: 255/255, green: 121/255, blue: 0/255, alpha: 1).cgColor, UIColor(red: 255/255, green: 182/255, blue: 0/255, alpha: 1).cgColor]
             gradient.startPoint = CGPoint(x: 0, y: 1)
@@ -150,7 +152,7 @@ class ProfileViewController: UIViewController {
     @IBAction func signOutTapped(_ sender: Any) {
         
         let alert = UIAlertController(title: "Signout of your account?", message: "Are you sure you want to signout of your account?", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
             try! Auth.auth().signOut()
             let signInViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? SignInViewConttroller
             
@@ -158,7 +160,7 @@ class ProfileViewController: UIViewController {
             self.view.window?.makeKeyAndVisible()
         }))
         
-        alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: { action in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
             self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true)
@@ -205,7 +207,7 @@ class ProfileViewController: UIViewController {
             })
             
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in self.dismiss(animated: true, completion: nil)}))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in self.dismiss(animated: true, completion: nil)}))
         self.present(alert, animated: true)
         
     }

@@ -98,7 +98,9 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         if let navigationBar = self.navigationController?.navigationBar {
             let gradient = CAGradientLayer()
             var bounds = navigationBar.bounds
-            bounds.size.height += UIApplication.shared.statusBarFrame.size.height
+            let window = UIApplication.shared
+                .windows.filter {$0.isKeyWindow}.first
+            bounds.size.height += window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
             gradient.frame = bounds
             gradient.colors = [UIColor(red: 255/255, green: 121/255, blue: 0/255, alpha: 1).cgColor, UIColor(red: 255/255, green: 182/255, blue: 0/255, alpha: 1).cgColor]
             gradient.startPoint = CGPoint(x: 0, y: 1)
