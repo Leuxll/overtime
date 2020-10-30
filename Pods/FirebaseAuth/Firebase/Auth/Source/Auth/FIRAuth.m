@@ -1374,13 +1374,6 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
   return [self canHandleURL:url];
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(nullable NSString *)sourceApplication
-         annotation:(id)annotation {
-  return [self canHandleURL:url];
-}
-
 - (void)setAPNSToken:(NSData *)token type:(FIRAuthAPNSTokenType)type {
   dispatch_sync(FIRAuthGlobalWorkQueue(), ^{
     self->_tokenManager.token = [[FIRAuthAPNSToken alloc] initWithData:token type:type];
