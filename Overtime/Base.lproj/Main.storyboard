@@ -345,10 +345,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="eye-TB-yVl" secondAttribute="trailing" constant="19" id="3Il-YL-sT0"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eye-TB-yVl" secondAttribute="trailing" id="3Il-YL-sT0"/>
                                                 <constraint firstItem="zGP-Yf-kdm" firstAttribute="top" secondItem="W1X-MJ-yfp" secondAttribute="top" id="6uA-CG-cl9"/>
                                                 <constraint firstItem="zGP-Yf-kdm" firstAttribute="centerY" secondItem="W1X-MJ-yfp" secondAttribute="centerY" id="8Rn-qS-9jN"/>
                                                 <constraint firstItem="cZy-Mg-96Q" firstAttribute="leading" secondItem="TCm-38-Pma" secondAttribute="leading" id="96N-be-ABU"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eye-TB-yVl" secondAttribute="trailing" id="Fin-fs-3WV"/>
                                                 <constraint firstItem="cZy-Mg-96Q" firstAttribute="trailing" secondItem="TCm-38-Pma" secondAttribute="trailing" id="H8m-DJ-aS1"/>
                                                 <constraint firstItem="TCm-38-Pma" firstAttribute="top" secondItem="cZy-Mg-96Q" secondAttribute="bottom" constant="8" id="SGt-RU-N6a"/>
                                                 <constraint firstItem="eye-TB-yVl" firstAttribute="centerX" secondItem="cZy-Mg-96Q" secondAttribute="centerX" id="Xuz-6D-LHo"/>
@@ -356,6 +357,8 @@
                                                 <constraint firstAttribute="bottom" secondItem="TCm-38-Pma" secondAttribute="bottom" constant="27" id="dac-01-WOo"/>
                                                 <constraint firstItem="eye-TB-yVl" firstAttribute="leading" secondItem="zGP-Yf-kdm" secondAttribute="trailing" constant="13" id="fEt-uV-ken"/>
                                                 <constraint firstItem="zGP-Yf-kdm" firstAttribute="leading" secondItem="W1X-MJ-yfp" secondAttribute="leading" id="hDH-ww-BHJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="eye-TB-yVl" secondAttribute="trailing" constant="19" id="hgb-Ik-Cn4"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eye-TB-yVl" secondAttribute="trailing" id="l2E-nm-WBu"/>
                                                 <constraint firstItem="eye-TB-yVl" firstAttribute="top" secondItem="W1X-MJ-yfp" secondAttribute="top" constant="19" id="pHv-WA-NGr"/>
                                                 <constraint firstItem="cZy-Mg-96Q" firstAttribute="top" secondItem="eye-TB-yVl" secondAttribute="bottom" constant="49" id="yAu-cX-USK"/>
                                             </constraints>
