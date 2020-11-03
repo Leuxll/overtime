@@ -784,7 +784,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EB1B0A9AB51E322242B1C86B /* Pods-OvertimeTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28HBU7HFJG;
@@ -807,7 +806,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DFA1A4602CD74E52AE72DE08 /* Pods-OvertimeTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28HBU7HFJG;
@@ -830,7 +828,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A1DB4A42895C70F538E320C /* Pods-Overtime-OvertimeUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28HBU7HFJG;
 				INFOPLIST_FILE = OvertimeUITests/Info.plist;
@@ -851,7 +848,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1DAA219A9F83224FB731C827 /* Pods-Overtime-OvertimeUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28HBU7HFJG;
 				INFOPLIST_FILE = OvertimeUITests/Info.plist;
