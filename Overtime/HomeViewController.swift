@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setUpNavBar()
         postsCollectionRef = Firestore.firestore().collection("posts")
         listPost()
+        Utilities.questions.removeAll()
         
     }
     

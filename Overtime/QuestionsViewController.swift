@@ -24,10 +24,6 @@ class QuestionsViewController: UIViewController {
     var selectedAnswer: Int = 0
     var totalPoints: Int = 0
     var questionsAnswered: Int = 0
-    var finalpoints: Int = 0
-    var finalquestions: Int = 0
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +70,7 @@ class QuestionsViewController: UIViewController {
         } else {
             let alert = UIAlertController(title: "Finished", message: "End of Quiz. Your score is: " + String(score), preferredStyle: .alert)
             let restartAction = UIAlertAction(title: "Return Home", style: .default, handler: { action in
-//                    self.updatingUserInfo()
+                    self.updatingUserInfo()
                     self.returnHome()})
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
@@ -82,25 +78,27 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-//    func updatingUserInfo() {
-//        let currentUser = Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid)
-//        currentUser.getDocument { [self] (document, err) in
-//            let points : Int = document?.get("points") as! Int
-//            let question: Int = document?.get("questionsAnswered") as! Int
-//            
-//            self.totalPoints = points
-//            self.questionsAnswered = question
-//            
-//            finalpoints = totalPoints + score
-//            finalquestions = questionsAnswered + Utilities.questions.count
-//            
-//            print(self.finalpoints, self.finalquestions)
-//        }
+    func updatingUserInfo() {
+        let currentUser = Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid)
+        currentUser.getDocument { [self] (document, err) in
+            var points : Int = document?.get("points") as! Int
+            var question: Int = document?.get("questionsAnswered") as! Int
+            
+            points += score
+            question += allQuestions.count
+            print(points, question)
+            
+            currentUser.updateData(["points" : points, "questionsAnswered" : question]) { err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                }
+            
+        }
         
-//        currentUser.updateData(["points": totalPoints, "questionsAnswered": questionsAnswered])
-//        print("update")
-        
-//    }
+    }
+}
     
     func returnHome() {
         
@@ -108,10 +106,9 @@ class QuestionsViewController: UIViewController {
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
-        questionNumber = 0
-        score = 0
-        Utilities.questions.removeAll()
+//        questionNumber = 0
+//        score = 0
+//        Utilities.questions.removeAll()
 //        print("home")
     }
-
 }
