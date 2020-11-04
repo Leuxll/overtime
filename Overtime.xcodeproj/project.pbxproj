@@ -40,9 +40,9 @@
 		0EDC3EBC249E3FA300D9D528 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC3EBB249E3FA300D9D528 /* User.swift */; };
 		0EDC3EC824A04CEC00D9D528 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC3EC724A04CEC00D9D528 /* LeaderboardTableViewCell.swift */; };
 		0EDC3ECA24A0592200D9D528 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDC3EC924A0592200D9D528 /* QuestionsViewController.swift */; };
-		481BB82616206442AD0AF1F2 /* Pods_Overtime_OvertimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 943CB0FFF89CBAF43C7B4FA1 /* Pods_Overtime_OvertimeUITests.framework */; };
-		7114292D583C8EF2B51427C1 /* Pods_OvertimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E618429E787AF3C91A36E0 /* Pods_OvertimeTests.framework */; };
-		AB4C22228ACEEE1C6D1FC36A /* Pods_Overtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4331E84B07F8C65E9CC9443D /* Pods_Overtime.framework */; };
+		32DF6F9CBEA02574C14C1D74 /* Pods_OvertimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A494271D7A5E34A0187B642 /* Pods_OvertimeTests.framework */; };
+		E058A9312A6D4DDE392A15CB /* Pods_Overtime_OvertimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2224BED14CFE63A6FE64FA /* Pods_Overtime_OvertimeUITests.framework */; };
+		EC047517E2E1B84A99ACE931 /* Pods_Overtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F38882D055A1FF051D608A /* Pods_Overtime.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02B8FCBBB98C5B6CBAEB68B6 /* Pods-Overtime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime.debug.xcconfig"; path = "Target Support Files/Pods-Overtime/Pods-Overtime.debug.xcconfig"; sourceTree = "<group>"; };
-		0A1DB4A42895C70F538E320C /* Pods-Overtime-OvertimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime-OvertimeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Overtime-OvertimeUITests/Pods-Overtime-OvertimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0E198A00249769590023AF62 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0E198A0424976F360023AF62 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		0E198A422498566A0023AF62 /* ScaledHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledHeightImageView.swift; sourceTree = "<group>"; };
@@ -115,13 +113,15 @@
 		0EDC3EBB249E3FA300D9D528 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0EDC3EC724A04CEC00D9D528 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		0EDC3EC924A0592200D9D528 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
-		1DAA219A9F83224FB731C827 /* Pods-Overtime-OvertimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime-OvertimeUITests.release.xcconfig"; path = "Target Support Files/Pods-Overtime-OvertimeUITests/Pods-Overtime-OvertimeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4331E84B07F8C65E9CC9443D /* Pods_Overtime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Overtime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		87E618429E787AF3C91A36E0 /* Pods_OvertimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvertimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		943CB0FFF89CBAF43C7B4FA1 /* Pods_Overtime_OvertimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Overtime_OvertimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFA1A4602CD74E52AE72DE08 /* Pods-OvertimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvertimeTests.release.xcconfig"; path = "Target Support Files/Pods-OvertimeTests/Pods-OvertimeTests.release.xcconfig"; sourceTree = "<group>"; };
-		E550C152EF433F12240502B0 /* Pods-Overtime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime.release.xcconfig"; path = "Target Support Files/Pods-Overtime/Pods-Overtime.release.xcconfig"; sourceTree = "<group>"; };
-		EB1B0A9AB51E322242B1C86B /* Pods-OvertimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvertimeTests.debug.xcconfig"; path = "Target Support Files/Pods-OvertimeTests/Pods-OvertimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		385540FBD5D4C056FD5DE906 /* Pods-Overtime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime.release.xcconfig"; path = "Target Support Files/Pods-Overtime/Pods-Overtime.release.xcconfig"; sourceTree = "<group>"; };
+		3D739015BA99F7D3F173A3AD /* Pods-OvertimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvertimeTests.release.xcconfig"; path = "Target Support Files/Pods-OvertimeTests/Pods-OvertimeTests.release.xcconfig"; sourceTree = "<group>"; };
+		405FBA42936F17397B069817 /* Pods-Overtime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime.debug.xcconfig"; path = "Target Support Files/Pods-Overtime/Pods-Overtime.debug.xcconfig"; sourceTree = "<group>"; };
+		6A494271D7A5E34A0187B642 /* Pods_OvertimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvertimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D2224BED14CFE63A6FE64FA /* Pods_Overtime_OvertimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Overtime_OvertimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97281CF0211ABFD4C96454D0 /* Pods-OvertimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvertimeTests.debug.xcconfig"; path = "Target Support Files/Pods-OvertimeTests/Pods-OvertimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C5F38882D055A1FF051D608A /* Pods_Overtime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Overtime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D52BF0AA8DD64541A87CCAA5 /* Pods-Overtime-OvertimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime-OvertimeUITests.release.xcconfig"; path = "Target Support Files/Pods-Overtime-OvertimeUITests/Pods-Overtime-OvertimeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DAF8EDE0B3E0188D31677743 /* Pods-Overtime-OvertimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overtime-OvertimeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Overtime-OvertimeUITests/Pods-Overtime-OvertimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4C22228ACEEE1C6D1FC36A /* Pods_Overtime.framework in Frameworks */,
+				EC047517E2E1B84A99ACE931 /* Pods_Overtime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7114292D583C8EF2B51427C1 /* Pods_OvertimeTests.framework in Frameworks */,
+				32DF6F9CBEA02574C14C1D74 /* Pods_OvertimeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				481BB82616206442AD0AF1F2 /* Pods_Overtime_OvertimeUITests.framework in Frameworks */,
+				E058A9312A6D4DDE392A15CB /* Pods_Overtime_OvertimeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +200,7 @@
 				0EB739202493608100F24E1F /* OvertimeUITests */,
 				0EB738FB2493607F00F24E1F /* Products */,
 				23F7B971F31CC876DA4946BC /* Pods */,
-				711EE898899C6C62BCC393CE /* Frameworks */,
+				14FEA4E2178FD75352433EC5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,27 +282,27 @@
 			name = Plists;
 			sourceTree = "<group>";
 		};
+		14FEA4E2178FD75352433EC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5F38882D055A1FF051D608A /* Pods_Overtime.framework */,
+				7D2224BED14CFE63A6FE64FA /* Pods_Overtime_OvertimeUITests.framework */,
+				6A494271D7A5E34A0187B642 /* Pods_OvertimeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		23F7B971F31CC876DA4946BC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				02B8FCBBB98C5B6CBAEB68B6 /* Pods-Overtime.debug.xcconfig */,
-				E550C152EF433F12240502B0 /* Pods-Overtime.release.xcconfig */,
-				0A1DB4A42895C70F538E320C /* Pods-Overtime-OvertimeUITests.debug.xcconfig */,
-				1DAA219A9F83224FB731C827 /* Pods-Overtime-OvertimeUITests.release.xcconfig */,
-				EB1B0A9AB51E322242B1C86B /* Pods-OvertimeTests.debug.xcconfig */,
-				DFA1A4602CD74E52AE72DE08 /* Pods-OvertimeTests.release.xcconfig */,
+				405FBA42936F17397B069817 /* Pods-Overtime.debug.xcconfig */,
+				385540FBD5D4C056FD5DE906 /* Pods-Overtime.release.xcconfig */,
+				DAF8EDE0B3E0188D31677743 /* Pods-Overtime-OvertimeUITests.debug.xcconfig */,
+				D52BF0AA8DD64541A87CCAA5 /* Pods-Overtime-OvertimeUITests.release.xcconfig */,
+				97281CF0211ABFD4C96454D0 /* Pods-OvertimeTests.debug.xcconfig */,
+				3D739015BA99F7D3F173A3AD /* Pods-OvertimeTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		711EE898899C6C62BCC393CE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4331E84B07F8C65E9CC9443D /* Pods_Overtime.framework */,
-				943CB0FFF89CBAF43C7B4FA1 /* Pods_Overtime_OvertimeUITests.framework */,
-				87E618429E787AF3C91A36E0 /* Pods_OvertimeTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,11 +312,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EB739262493608100F24E1F /* Build configuration list for PBXNativeTarget "Overtime" */;
 			buildPhases = (
-				7032E60D44A0BCAF6913BA28 /* [CP] Check Pods Manifest.lock */,
+				EA43E4646AA5F1166F46C2FD /* [CP] Check Pods Manifest.lock */,
 				0EB738F62493607F00F24E1F /* Sources */,
 				0EB738F72493607F00F24E1F /* Frameworks */,
 				0EB738F82493607F00F24E1F /* Resources */,
-				505E6939B8108DEAE0948034 /* [CP] Embed Pods Frameworks */,
+				D7441A3CAC44C1A240BFF0A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,7 +331,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EB739292493608100F24E1F /* Build configuration list for PBXNativeTarget "OvertimeTests" */;
 			buildPhases = (
-				4C6CBAA8CF153D34490CD3B0 /* [CP] Check Pods Manifest.lock */,
+				DD515B5FB4B7EE0E89F6D16C /* [CP] Check Pods Manifest.lock */,
 				0EB7390E2493608100F24E1F /* Sources */,
 				0EB7390F2493608100F24E1F /* Frameworks */,
 				0EB739102493608100F24E1F /* Resources */,
@@ -350,11 +350,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EB7392C2493608100F24E1F /* Build configuration list for PBXNativeTarget "OvertimeUITests" */;
 			buildPhases = (
-				DEB3F99D673871AD7599174D /* [CP] Check Pods Manifest.lock */,
+				72BE3295FE25A64BD73354DA /* [CP] Check Pods Manifest.lock */,
 				0EB739192493608100F24E1F /* Sources */,
 				0EB7391A2493608100F24E1F /* Frameworks */,
 				0EB7391B2493608100F24E1F /* Resources */,
-				3D45CE7986783C5E827DCBEB /* [CP] Embed Pods Frameworks */,
+				B3B6965850DA4D10C01C6124 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -446,7 +446,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D45CE7986783C5E827DCBEB /* [CP] Embed Pods Frameworks */ = {
+		72BE3295FE25A64BD73354DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Overtime-OvertimeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3B6965850DA4D10C01C6124 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -463,7 +485,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Overtime-OvertimeUITests/Pods-Overtime-OvertimeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4C6CBAA8CF153D34490CD3B0 /* [CP] Check Pods Manifest.lock */ = {
+		D7441A3CAC44C1A240BFF0A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Overtime/Pods-Overtime-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Overtime/Pods-Overtime-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Overtime/Pods-Overtime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD515B5FB4B7EE0E89F6D16C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -485,24 +524,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		505E6939B8108DEAE0948034 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Overtime/Pods-Overtime-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Overtime/Pods-Overtime-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Overtime/Pods-Overtime-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7032E60D44A0BCAF6913BA28 /* [CP] Check Pods Manifest.lock */ = {
+		EA43E4646AA5F1166F46C2FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -518,28 +540,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Overtime-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DEB3F99D673871AD7599174D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Overtime-OvertimeUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -744,7 +744,7 @@
 		};
 		0EB739272493608100F24E1F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02B8FCBBB98C5B6CBAEB68B6 /* Pods-Overtime.debug.xcconfig */;
+			baseConfigurationReference = 405FBA42936F17397B069817 /* Pods-Overtime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -763,7 +763,7 @@
 		};
 		0EB739282493608100F24E1F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E550C152EF433F12240502B0 /* Pods-Overtime.release.xcconfig */;
+			baseConfigurationReference = 385540FBD5D4C056FD5DE906 /* Pods-Overtime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -782,7 +782,7 @@
 		};
 		0EB7392A2493608100F24E1F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB1B0A9AB51E322242B1C86B /* Pods-OvertimeTests.debug.xcconfig */;
+			baseConfigurationReference = 97281CF0211ABFD4C96454D0 /* Pods-OvertimeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -804,7 +804,7 @@
 		};
 		0EB7392B2493608100F24E1F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFA1A4602CD74E52AE72DE08 /* Pods-OvertimeTests.release.xcconfig */;
+			baseConfigurationReference = 3D739015BA99F7D3F173A3AD /* Pods-OvertimeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -826,7 +826,7 @@
 		};
 		0EB7392D2493608100F24E1F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A1DB4A42895C70F538E320C /* Pods-Overtime-OvertimeUITests.debug.xcconfig */;
+			baseConfigurationReference = DAF8EDE0B3E0188D31677743 /* Pods-Overtime-OvertimeUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28HBU7HFJG;
@@ -846,7 +846,7 @@
 		};
 		0EB7392E2493608100F24E1F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1DAA219A9F83224FB731C827 /* Pods-Overtime-OvertimeUITests.release.xcconfig */;
+			baseConfigurationReference = D52BF0AA8DD64541A87CCAA5 /* Pods-Overtime-OvertimeUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28HBU7HFJG;

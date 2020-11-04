@@ -19,7 +19,6 @@ class Utilities {
         textfield.backgroundColor = .black
         textfield.layer.cornerRadius = 10
         
-        
     }
     
     static func styleFilledButton(_ button:UIButton) {
