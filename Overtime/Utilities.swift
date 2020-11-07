@@ -13,6 +13,7 @@ class Utilities {
     
     static var questions = [Question]()
     
+    
     static func styleTextField(_ textfield: UITextField) {
         
         textfield.borderStyle = UITextField.BorderStyle.roundedRect
@@ -55,6 +56,13 @@ class Utilities {
         label.layer.cornerRadius = 14.0
         label.layer.masksToBounds = true
         label.font = UIFont(name: "Poppins-Bold", size: 12)
+        
+    }
+    
+    static func cellLabels(_ label:UILabel) {
+        
+        label.font = UIFont(name: "Poppins-Bold", size: 20)
+        label.textColor = UIColor(red: 255/255, green: 109/255, blue: 0/255, alpha: 1)
         
     }
 

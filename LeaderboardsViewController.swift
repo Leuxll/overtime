@@ -28,18 +28,17 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         
         userCollectionRef = Firestore.firestore().collection("users")
-        
         setUpNavBar()
         listUser()
-        
         tableView.backgroundColor = .black
-        print(users)
+        tableView.allowsSelection = false
+        
         
     }
     
     func listUser() {
         
-        userCollectionRef.order(by: "points", descending: true).getDocuments { (snapshot, error) in
+        userCollectionRef.getDocuments { (snapshot, error) in
             
             guard let snap = snapshot else {return}
             for document in snap.documents {
@@ -49,10 +48,57 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
                 let points = data["points"] as! Int
                 
                 self.users.append(LeaderboardUser(firstName: firstName, points: points))
+                self.users = self.bubbleSort(arr: self.users)
                 self.tableView.reloadData()
             }
             
         }
+        
+    }
+    
+    func bubbleSort(arr: [LeaderboardUser]) -> [LeaderboardUser] {
+        var array = arr
+        for _ in 0..<array.count - 1 {
+            for j in 0..<array.count - 1 {
+                if (array[j].points < array [j+1].points) {
+                    let temp = array[j]
+                    array[j] = array[j+1]
+                    array[j+1] = temp
+                }
+            }
+        }
+        return array
+    }
+    
+    func mergeSort (array: [LeaderboardUser]) -> [LeaderboardUser] {
+    
+        guard array.count > 1 else {
+            return array
+        }
+        
+        let leftArray = Array(array[0..<array.count/2])
+        let rightArray = Array(array[array.count/2..<array.count])
+        
+        return merge(left: mergeSort(array: leftArray), right: mergeSort(array: rightArray))
+    
+    }
+    
+    func merge(left: [LeaderboardUser], right: [LeaderboardUser]) -> [LeaderboardUser] {
+        
+        var mergedArray: [LeaderboardUser] = []
+        var left = left
+        var right  = right
+        
+        while left.count > 0 && right.count > 0 {
+            
+            if left.first!.points > right.first!.points {
+                mergedArray.append(left.removeFirst())
+            } else {
+                mergedArray.append(right.removeFirst())
+            }
+            
+        }
+        return mergedArray + left + right
         
     }
     
@@ -68,8 +114,8 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
             
         cell.firstName.text = users[indexPath.row].firstName
         cell.points.text = String(users[indexPath.row].points) + " points"
-        cell.points.font = UIFont(name: "Poppins-Bold", size: 12)
         cell.configureCell()
+        cell.backgroundColor = .black
         return cell
     
        } else {

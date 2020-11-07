@@ -28,6 +28,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         listPost()
         Utilities.questions.removeAll()
         
+        
     }
     
     func listPost() {

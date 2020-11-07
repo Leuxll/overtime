@@ -18,7 +18,7 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var answer3Button: UIButton!
     @IBOutlet weak var answer4Button: UIButton!
 
-    let allQuestions = Utilities.questions
+    var allQuestions = Utilities.questions
     var questionNumber: Int = 0
     var score: Int = 0
     var selectedAnswer: Int = 0
@@ -41,6 +41,7 @@ class QuestionsViewController: UIViewController {
         questionTextView.layer.cornerRadius = 24.0
         
         updateQuestion()
+        shuffleQuestion()
         
     }
     
@@ -54,6 +55,21 @@ class QuestionsViewController: UIViewController {
         }
         questionNumber += 1
         updateQuestion()
+    }
+    
+    func shuffleQuestion() {
+//        var last = allQuestions.count - 1
+//        
+//        while last > 0 {
+//            let rand = Int.random(in: 0..<last)
+//            print("swap items[\(last)] = \(allQuestions[last]) with items[\(rand)] = \(allQuestions[rand])")
+//            
+//            allQuestions.swapAt(last, rand)
+//            last -= 1
+//            
+//            print(allQuestions)
+//        }
+        
     }
     
     func updateQuestion() {
@@ -106,9 +122,6 @@ class QuestionsViewController: UIViewController {
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
-//        questionNumber = 0
-//        score = 0
-//        Utilities.questions.removeAll()
-//        print("home")
+
     }
 }

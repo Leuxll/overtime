@@ -26,11 +26,8 @@ class LeaderboardTableViewCell: UITableViewCell {
     
     func configureCell() {
         
-        firstName.font = UIFont(name: "Poppins-Bold", size: 20)
-        firstName.textColor = UIColor(red: 255/255, green: 109/255, blue: 0/255, alpha: 1)
-        points.font = UIFont(name: "Poppins-Regular", size: 12)
-        points.textColor = UIColor(red: 255/255, green: 109/255, blue: 0/255, alpha: 1)
-        backgroundColor = .black
+        Utilities.cellLabels(firstName)
+        Utilities.cellLabels(points)
         
     }
 
