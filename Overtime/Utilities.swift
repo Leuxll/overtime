@@ -17,8 +17,12 @@ class Utilities {
     static func styleTextField(_ textfield: UITextField) {
         
         textfield.borderStyle = UITextField.BorderStyle.roundedRect
-        textfield.backgroundColor = .black
+        textfield.backgroundColor = UIColor.init(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
         textfield.layer.cornerRadius = 10
+        textfield.layer.borderWidth = 3
+        textfield.layer.borderColor = UIColor.init(red: 17/255, green: 17/255, blue: 17/255, alpha: 1).cgColor
+        textfield.layer.masksToBounds = true
+        
         
     }
     

@@ -20,11 +20,11 @@ class PostCell: UICollectionViewCell {
 
         imageView.roundCorners(cornerRadius: 40.0)
         contentView.layer.cornerRadius = 1.0
-        contentView.layer.borderWidth = 1.0
-        contentView.layer.borderColor = UIColor.clear.cgColor
         contentView.layer.masksToBounds = false
-        layer.masksToBounds = false
+        layer.masksToBounds = true
         layer.cornerRadius = 40.0
+        layer.borderColor = UIColor.init(red: 17/255, green: 17/255, blue: 17/255, alpha: 1).cgColor
+        layer.borderWidth = 5
         
         nameLabel.numberOfLines = 0
         
