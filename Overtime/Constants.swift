@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Constants that gets used to segue to different screens
 struct Constants {
     
     struct Storyboard {

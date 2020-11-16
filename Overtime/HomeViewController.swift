@@ -39,16 +39,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             for document in snap.documents {
                 
                 let data = document.data()
-                let playerName = data["playerName"] as? String
-                let difficulty = data["difficulty"] as? String
-                let imageUrl = data["imageUrl"] as? String
-                let description = data["description"] as? String
-                let points = data["points"] as? String
+                let playerName = data["playerName"] as! String
+                let difficulty = data["difficulty"] as! String
+                let imageUrl = data["imageUrl"] as! String
+                let description = data["description"] as! String
+                let points = data["points"] as! String
                 let documentId = document.documentID
                 
                 self.posts.append(Post(imageUrl: imageUrl, playerName: playerName, points: points, difficulty: difficulty, description: description, documentId: documentId))
                 self.collectionView.reloadData()
-                
             }
             
         }

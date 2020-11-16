@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Structure within array that contains users data
 struct User {
     
     let firstName: String?

@@ -29,7 +29,7 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        // Calling the Utilites.styleFilledButton to customize the buttons to the way my client wants them. Also, calling updateQuestion functions when the view of this viewcontroller appears on the phone.
+        //Calling the Utilites.styleFilledButton to customize the buttons to the way my client wants them. Also, calling updateQuestion functions when the view of this viewcontroller appears on the phone.
         Utilities.styleFilledButton(answer1Button)
         Utilities.styleFilledButton(answer2Button)
         Utilities.styleFilledButton(answer3Button)
@@ -53,7 +53,7 @@ class QuestionsViewController: UIViewController {
         
     }
     
-    //This is an IBAction function that links to when the button is pressed it would perform a certain action. In this case, it would be if the user clicks on the button that has the same value as correctAnswer than it would add a point to the score variable. Then it would proceed to add one to the questionNumber and update the questions for it to show the next one.
+    //When the correct button is selected and has the same value as correctAnswer, it would add a point to the score variable. Then it would proceed to add one to the questionNumber and update the questions for it to show the next one.
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == selectedAnswer {
             print("correct")
@@ -66,7 +66,7 @@ class QuestionsViewController: UIViewController {
         updateQuestion()
     }
     
-    // This function is used after the user answers a question until there is no more quetions left in the array. This function with the combination above is going to iterate through all theallQuetions veriable which is an array from Utiltiies called questions. Then if the function finishes iterating through the array and the questionNuber is larger, it would prompt the user with an alert saying the the quiz is finished and then from this the button that is provided will prompt the user to go back to the homescreen and add the corresponding points to the users account
+    //This function is called until there is no more quetions left in the array. It iterates through all theallQuetions veriable which is an array from Utiltiies called questions.
     func updateQuestion() {
         
         if questionNumber <= Utilities.questions.count - 1 {
@@ -79,6 +79,7 @@ class QuestionsViewController: UIViewController {
             selectedAnswer = Utilities.questions[questionNumber].correctAnswer
             
         } else {
+            //Prompt the user with an alert saying the the quiz is finished and bring users back to the homescreen
             let alert = UIAlertController(title: "Finished", message: "End of Quiz. Your score is: " + String(score), preferredStyle: .alert)
             let restartAction = UIAlertAction(title: "Return Home", style: .default, handler: { action in
                     self.updatingUserInfo()
@@ -89,7 +90,7 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    //This is one of the functions that gets called within updateQuestion, this is the function that communicates with firebase by grabbing the current user's id and looking through firebase to first retreive the scores and the questions answered of that ceratin user then, we would add the score that the user acheived in the current quiz and update that certain document.
+    //This function communicates with firebase by grabbing the current user's id and looking through firebase to first retreive the scores and the questions answered.
     func updatingUserInfo() {
         let currentUser = Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid)
         currentUser.getDocument { [self] (document, err) in
@@ -100,6 +101,7 @@ class QuestionsViewController: UIViewController {
             question += allQuestions.count
             print(points, question)
             
+            //Add scores that the user acheived in the current quiz and update that certain document.
             currentUser.updateData(["points" : points, "questionsAnswered" : question]) { err in
                 if let err = err {
                     print("Error updating document: \(err)")
@@ -112,7 +114,7 @@ class QuestionsViewController: UIViewController {
     }
 }
     
-    // This function is another function that gets called in updateQuestion when there is no more questions to present to the user within that quiz. By calling this function it would return to the homescreen of the application.
+    //This function is another function that gets called in updateQuestion when there is no more questions to present to the user within that quiz. By calling this function it would return to the homescreen of the application.
     func returnHome() {
         
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as? TabBarController

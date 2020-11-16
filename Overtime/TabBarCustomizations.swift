@@ -9,6 +9,7 @@
 import UIKit
 class TabBarCustomizations: UITabBar {
 
+    //Customization for the TabBar
     override open func sizeThatFits(_ size: CGSize) -> CGSize {
         super.sizeThatFits(size)
         var sizeThatFits = super.sizeThatFits(size)

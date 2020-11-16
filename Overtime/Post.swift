@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Structure within array that contains posts data
 struct Post {
     
     let imageUrl: String?

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//Structure within array that contains questions and answers data
 struct Question {
     
     let question: String
