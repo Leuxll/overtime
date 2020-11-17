@@ -16,6 +16,7 @@ class PostCell: UICollectionViewCell {
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     
+    //Customizations
     func configureCell() {
 
         imageView.roundCorners(cornerRadius: 40.0)
@@ -35,6 +36,7 @@ class PostCell: UICollectionViewCell {
     
 }
 
+//Customizting the Cells with rounded corders
 extension UIView {
     func roundCorners(cornerRadius: Double) {
         layer.cornerRadius = CGFloat(cornerRadius)

@@ -53,7 +53,7 @@ class DetailedViewController: UIViewController {
         
     }
     
-    //Stayling of TextField
+    //Styling of TextField
     func customTextField() {
         
         textField.text = detailedDescription

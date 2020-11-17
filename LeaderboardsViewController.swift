@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+//Structure for the leaderboard user
 struct LeaderboardUser {
     
     let firstName: String?
@@ -22,7 +23,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
     var users = [LeaderboardUser]()
     var userCollectionRef: CollectionReference!
     
-    //Linking UIView Elements outlets to the code from storybooard
+    //Linking UIView Elements outlets to the code from storyboard
     @IBOutlet weak var tableView: UITableView!
     
     //Functions to call when view loads
@@ -50,13 +51,13 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
             //Trapping any invalid paramters if any
             guard let snap = snapshot else {return}
             
-            //For-loop that loops through the docuemnts within the snapshot recieved
+            //For-loop that loops through the documents within the snapshot recieved
             for document in snap.documents {
                 //settting each variable to the correct retreived field
                 let data = document.data()
                 let firstName = data["firstName"] as? String
                 let points = data["points"] as! Int
-                //Appending the information above the the array list
+                //Appending the information above to the array list
                 self.users.append(LeaderboardUser(firstName: firstName, points: points))
                 //Setting the users array to the bubble sorted array
                 self.users = self.bubbleSort(arr: self.users)
@@ -124,7 +125,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
     //Setting the tableview up with designated protocals
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //Populating the table rowsa by getting the count of the array
+        //Setting the number of items to arrays count
         users.count
         
     }
@@ -151,10 +152,11 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-
-    
+    //Function to create a gradient image for the navigation bar, called from setUpNavBar()
     func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
+        //Varaible of gradientImage as UIImage
         var gradientImage:UIImage?
+        //Creating a Graphical gradient image through the input of colors and generating an image that can be placed on the navigation bar at the top
         UIGraphicsBeginImageContext(gradientLayer.frame.size)
         if let context = UIGraphicsGetCurrentContext() {
             gradientLayer.render(in: context)
@@ -164,27 +166,39 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         return gradientImage
     }
     
+    //Setting up navigation bar
     func setUpNavBar() {
         
         if let navigationBar = self.navigationController?.navigationBar {
+            //Defining gradient as a CAGradient
             let gradient = CAGradientLayer()
+            //Bounds of the navigationBar
             var bounds = navigationBar.bounds
+            //The window of the navigation controller
             let window = UIApplication.shared
                 .windows.filter {$0.isKeyWindow}.first
             bounds.size.height += window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+            //Setting the gradient frame to the bounds of the navigationbar bounds
             gradient.frame = bounds
+            //Selecting the 2 colors that is needed in for the gradient
             gradient.colors = [UIColor(red: 255/255, green: 121/255, blue: 0/255, alpha: 1).cgColor, UIColor(red: 255/255, green: 182/255, blue: 0/255, alpha: 1).cgColor]
+            //Stating the start point and the end points of the gradient to control the direction that the gradient goes at
             gradient.startPoint = CGPoint(x: 0, y: 1)
             gradient.endPoint = CGPoint(x: 0, y: 0)
 
+            //passing the gradient created through the get image function above to create an image with the gradient
             if let image = getImageFrom(gradientLayer: gradient) {
+                //setting the image as the backgroundImage of the navigation controller
                 navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
             }
             
+            //Create a label
             let label = UILabel()
+            //Customizing label
             label.textColor = .white
             label.text = "Leadeboards"
             label.font = UIFont(name: "Poppins-Bold", size: 27)
+            //Implementing the label on the left by passing it into a bar button with a custom view
             navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)
             
         }

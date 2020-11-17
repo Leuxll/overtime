@@ -24,8 +24,10 @@ class LeaderboardTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //Customizations
     func configureCell() {
         
+        //Configuring the 2 cell Labels within the Leaderboard cell
         Utilities.cellLabels(firstName)
         Utilities.cellLabels(points)
         
