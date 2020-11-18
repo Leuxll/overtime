@@ -72,7 +72,6 @@ class DetailedViewController: UIViewController {
         questionCollectionRef.getDocuments { (snapshot, error) in
             //Trapping any invalid parameters if any
             guard let snap = snapshot else {return}
-            
             //For-loop to loops through the docments within the snapshot received
             for document in snap.documents {
                 //setting each variable to the correct field

@@ -37,7 +37,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         //Listing the users
         listUser()
         //Setting properties of the tableView
-        tableView.backgroundColor = .black
+        tableView.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
         tableView.allowsSelection = false
         
         
@@ -59,7 +59,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
                 let points = data["points"] as! Int
                 //Appending the information above to the array list
                 self.users.append(LeaderboardUser(firstName: firstName, points: points))
-                //Setting the users array to the bubble sorted array
+                //Setting the users array to the merge sorted array
                 self.users = self.bubbleSort(arr: self.users)
                 //Reloading the tableview to reflect the sorted users according to points
                 self.tableView.reloadData()
@@ -90,38 +90,6 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         return array
     }
     
-//    func mergeSort (array: [LeaderboardUser]) -> [LeaderboardUser] {
-//
-//        guard array.count > 1 else {
-//            return array
-//        }
-//
-//        let leftArray = Array(array[0..<array.count/2])
-//        let rightArray = Array(array[array.count/2..<array.count])
-//
-//        return merge(left: mergeSort(array: leftArray), right: mergeSort(array: rightArray))
-//
-//    }
-//
-//    func merge(left: [LeaderboardUser], right: [LeaderboardUser]) -> [LeaderboardUser] {
-//
-//        var mergedArray: [LeaderboardUser] = []
-//        var left = left
-//        var right  = right
-//
-//        while left.count > 0 && right.count > 0 {
-//
-//            if left.first!.points > right.first!.points {
-//                mergedArray.append(left.removeFirst())
-//            } else {
-//                mergedArray.append(right.removeFirst())
-//            }
-//
-//        }
-//        return mergedArray + left + right
-//
-//    }
-    
     //Setting the tableview up with designated protocals
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -140,7 +108,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         cell.points.text = String(users[indexPath.row].points) + " points"
         //customizing the cells
         cell.configureCell()
-        cell.backgroundColor = .black
+        cell.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
         return cell
     
        } else {
