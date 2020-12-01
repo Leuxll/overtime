@@ -91,7 +91,8 @@ class DetailedViewController: UIViewController {
         }
     }
     
-    //Shuffling the array, so that question appear in different order, setting parameters that needs to be passed in as an array with the structure of Question
+    //Shuffling the array, so that question appear in different order, setting parameters that needs to be passed in as an array with the structure of Question.
+    //Wooding, Victor, Shuffle an Array in Swift 4, YouTube Video, https://www.youtube.com/watch?v=5hlw-KGfXtY&feature=youtu.be
     func shuffleQuestions(arrayToBeShuffled array1: [Question]) {
         
         //Initializing different variables
@@ -108,7 +109,7 @@ class DetailedViewController: UIViewController {
             //removing that array item
             oldArray.remove(at: randomNumber)
         }
-        //settiong the Utiltieis.questions array that we were pulling from to the newArray
+        //settiong the Utilties.questions array that we were pulling from to the newArray
         Utilities.questions = newArray
         
     }

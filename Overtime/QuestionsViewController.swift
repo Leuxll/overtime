@@ -54,6 +54,7 @@ class QuestionsViewController: UIViewController {
     }
     
     //When the correct button is selected and has the same value as correctAnswer, it would add a point to the score variable. Then it would proceed to add one to the questionNumber and update the questions for it to show the next one.
+    //Wooding, Victor, How to Build an App for Iphone: Multiple Choice Quiz (Xcode 9 & Swift 4), YouTube Video, https://www.youtube.com/watch?v=pXbG9RS3C5A
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == selectedAnswer {
             print("correct")
@@ -67,6 +68,7 @@ class QuestionsViewController: UIViewController {
     }
     
     //This function is called until there is no more quetions left in the array. It iterates through all theallQuetions veriable which is an array from Utiltiies called questions.
+    //Wooding, Victor, How to Build an App for Iphone: Multiple Choice Quiz (Xcode 9 & Swift 4), YouTube Video, https://www.youtube.com/watch?v=pXbG9RS3C5A
     func updateQuestion() {
         
         if questionNumber <= Utilities.questions.count - 1 {

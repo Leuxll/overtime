@@ -55,6 +55,12 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(passwordTextField)
         Utilities.styleTextField(confirmPasswordTextField)
         Utilities.styleFilledButton(signUpButton)
+        customTextFields()
+        
+    }
+    
+    func customTextFields() {
+        
         firstNameTextField.attributedPlaceholder = NSAttributedString(string: "First Name", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
         lastNameTextField.attributedPlaceholder = NSAttributedString(string: "Last Name", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes:[NSAttributedString.Key.foregroundColor: UIColor.white])
@@ -63,42 +69,8 @@ class SignUpViewController: UIViewController {
         
     }
     
-//    func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
-//        var gradientImage:UIImage?
-//        UIGraphicsBeginImageContext(gradientLayer.frame.size)
-//        if let context = UIGraphicsGetCurrentContext() {
-//            gradientLayer.render(in: context)
-//            gradientImage = UIGraphicsGetImageFromCurrentImageContext()?.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch)
-//        }
-//        UIGraphicsEndImageContext()
-//        return gradientImage
-//    }
-//
-//    func setNavBarToTheView() {
-//
-//        self.navigationItem.setHidesBackButton(true, animated: false)
-//        self.navigationItem.title = "Overtime"
-//
-//        if let navigationBar = self.navigationController?.navigationBar {
-//            let gradient = CAGradientLayer()
-//            var bounds = navigationBar.bounds
-//            let window = UIApplication.shared
-//                .windows.filter {$0.isKeyWindow}.first
-//            bounds.size.height += window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-//            gradient.frame = bounds
-//            gradient.frame = bounds
-//            gradient.colors = [UIColor(red: 255/255, green: 121/255, blue: 0/255, alpha: 1).cgColor, UIColor(red: 255/255, green: 182/255, blue: 0/255, alpha: 1).cgColor]
-//            gradient.startPoint = CGPoint(x: 0, y: 1)
-//            gradient.endPoint = CGPoint(x: 0, y: 0)
-//
-//            if let image = getImageFrom(gradientLayer: gradient) {
-//                navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
-//            }
-//        }
-//
-//    }
-    
     //Validation of the string, called in sigUpTapped
+    //Ching, Chris, Firebase Authentication Tutorial 2020 - Custom iOS Login Page (Swift), YouTube Video, https://www.youtube.com/watch?v=1HN7usMROt8
     func checkingInputFields() -> String? {
         
         //if a field is empty return error
@@ -131,6 +103,7 @@ class SignUpViewController: UIViewController {
     }
     
     //Sign up when button is tapped
+    //Ching, Chris, Firebase Authentication Tutorial 2020 - Custom iOS Login Page (Swift), YouTube Video, https://www.youtube.com/watch?v=1HN7usMROt8
     @IBAction func signUpTapped(_ sender: Any) {
         
         //Check by called the checking input fields
@@ -186,6 +159,7 @@ class SignUpViewController: UIViewController {
     }
     
     //Displaying error for the user when the input is invalid
+    //Ching, Chris, Firebase Authentication Tutorial 2020 - Custom iOS Login Page (Swift), YouTube Video, https://www.youtube.com/watch?v=1HN7usMROt8
     func showError(_ message: String) {
         
         //Customizing error for the user when the input is invalid

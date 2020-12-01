@@ -39,6 +39,7 @@ class SignInViewConttroller: UIViewController {
     }
     
     //sign in when button is tapped
+    //Ching, Chris, Firebase Authentication Tutorial 2020 - Custom iOS Login Page (Swift), YouTube Video, https://www.youtube.com/watch?v=1HN7usMROt8
     @IBAction func signInTapped(_ sender: Any) {
         
         //Setting values to the different varaibles
@@ -76,6 +77,7 @@ class SignInViewConttroller: UIViewController {
     }
     
     //Displaying error for the user when the input is invalid
+    //Ching, Chris, Firebase Authentication Tutorial 2020 - Custom iOS Login Page (Swift), YouTube Video, https://www.youtube.com/watch?v=1HN7usMROt8
     func showError(_ message: String) {
         
         //Customizing the message that is passed

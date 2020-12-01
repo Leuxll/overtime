@@ -103,6 +103,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     //Function to create a gradient image for the navigation bar, called from setUpNavBar()
+    //Woelmer, Mike, Adding a Gradient Background to UINavigationBar on iOS, Online Article, https://spin.atomicobject.com/2018/06/21/resize-navbar-gradient-ios/
     func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
         //Varaible of gradientImage as UIImage
         var gradientImage:UIImage?
@@ -117,6 +118,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     //Setting up navigation bar
+    //Woelmer, Mike, Adding a Gradient Background to UINavigationBar on iOS, Online Article, https://spin.atomicobject.com/2018/06/21/resize-navbar-gradient-ios/
     func setUpNavBar() {
         
         if let navigationBar = self.navigationController?.navigationBar {

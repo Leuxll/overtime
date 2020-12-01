@@ -143,6 +143,7 @@ class ProfileViewController: UIViewController {
     }
     
     //Function to create a gradient image for th navigation bar, called frmo setUpNavBar
+    //Woelmer, Mike, Adding a Gradient Background to UINavigationBar on iOS, Online Article, https://spin.atomicobject.com/2018/06/21/resize-navbar-gradient-ios/
     func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
         //Variabkle of gradientImage as UIImage
         var gradientImage:UIImage?
@@ -157,6 +158,7 @@ class ProfileViewController: UIViewController {
     }
     
     //Setting up navigation bar
+    //Woelmer, Mike, Adding a Gradient Background to UINavigationBar on iOS, Online Article, https://spin.atomicobject.com/2018/06/21/resize-navbar-gradient-ios/
     func setUpNavBar() {
         
         if let navigationBar = self.navigationController?.navigationBar {
