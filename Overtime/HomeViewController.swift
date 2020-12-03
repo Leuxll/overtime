@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
-    //Called from viewDidLoad, retreving the database to list out he users in the collection view
+    //Called from viewDidLoad, retreving the database to list out the users in the collection view
     func listPost() {
         
         postsCollectionRef.getDocuments { (snapshot, error) in
@@ -53,7 +53,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             //For-loop that loops through documents within the snapshot
             for document in snap.documents {
                 
-                //setting each variable to the correct retrived field
+                //setting each variable to the correct retrieved field
                 let data = document.data()
                 let playerName = data["playerName"] as! String
                 let difficulty = data["difficulty"] as! String
@@ -62,7 +62,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 let points = data["points"] as! String
                 let documentId = document.documentID
                 
-                //Appednging the information above to the array list
+                //Appending the information above to the array list
                 self.posts.append(Post(imageUrl: imageUrl, playerName: playerName, points: points, difficulty: difficulty, description: description, documentId: documentId))
                 //Reloading the collectionView to show the correct data
                 self.collectionView.reloadData()

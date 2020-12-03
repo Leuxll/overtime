@@ -12,7 +12,10 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
+
     //Linking UIView Elements outlets to the code from storyboard
+    @IBOutlet weak var questionDoneImage: UILabel!
+    @IBOutlet weak var totalPointsImage: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var questionDoneLabel: UILabel!
     @IBOutlet weak var numOfQuestionDone: UILabel!
@@ -20,15 +23,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var numOfTotalPoints: UILabel!
     @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var deleteAccountButton: UIButton!
-    @IBOutlet weak var questionDoneImage: UILabel!
-    @IBOutlet weak var totalPointsImage: UILabel!
 
-    //Initializing the varaibels used within the ProfileViewController
+    //Initializing the variables used within the ProfileViewController
     var userDocumentReference: DocumentReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        questionDoneLabel.sizeToFit()
+        numOfQuestionDone.sizeToFit()
         //Reference to the specific document reference path that store the current users information
         userDocumentReference = Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid)
         
@@ -60,7 +62,7 @@ class ProfileViewController: UIViewController {
     
     //Function called in viewDidLaod
     func setUpPointsLabels() {
-        
+
         //Creating a new NSTextAttachment object
         let imageAttachment = NSTextAttachment()
         //Setting the objects image to the points image that is used
@@ -73,23 +75,23 @@ class ProfileViewController: UIViewController {
         completeText.append(attachmentString)
         //Setting the label to the completeText that we created
         totalPointsImage.attributedText = completeText
-        
+
         //Customizations the image label
         totalPointsImage.textAlignment = .center
         totalPointsImage.textColor = .white
         totalPointsImage.backgroundColor = UIColor(red: 247/255, green: 181/255, blue: 0/255, alpha: 1)
-        totalPointsImage.layer.cornerRadius = 42.0
+        totalPointsImage.layer.cornerRadius = 50.0
         totalPointsImage.layer.masksToBounds = true
         
         //Customizing the textlabel of "Total Points"
         totalPointsLabel.textColor = UIColor(red: 247/255, green: 181/255, blue: 0/255, alpha: 1)
-        totalPointsLabel.font = UIFont(name: "Poppins-Bold", size: 12)
+        totalPointsLabel.font = UIFont(name: "Poppins-Bold", size: 14)
         totalPointsLabel.text = "Total Points"
         totalPointsLabel.textAlignment = .center
         
         //Customizing the label that displays the # of point
         numOfTotalPoints.textColor = .white
-        numOfTotalPoints.font = UIFont(name: "Poppins-Bold", size: 20)
+        numOfTotalPoints.font = UIFont(name: "Poppins-Bold", size: 16)
         numOfTotalPoints.textAlignment = .center
         
     }
@@ -98,28 +100,28 @@ class ProfileViewController: UIViewController {
         
         //Repeating what is done in the setUpPointsLabel, this time for the totalQuetionsAnsweredLabel
         let imageAttachment = NSTextAttachment()
-        imageAttachment.image = UIImage(named: "sharp_equalizer_white_48pt.png")
+        imageAttachment.image = UIImage(named: "sharp_equalizer_white_48pt")
         let attachmentString = NSAttributedString(attachment: imageAttachment)
         let completeText = NSMutableAttributedString(string: "")
         completeText.append(attachmentString)
         questionDoneImage.attributedText = completeText
-        
+
         //Customizing the image label
         questionDoneImage.textAlignment = .center
         questionDoneImage.textColor = .white
         questionDoneImage.backgroundColor = UIColor(red: 109/255, green: 212/255, blue: 0/255, alpha: 1)
-        questionDoneImage.layer.cornerRadius = 42.0
+        questionDoneImage.layer.cornerRadius = 50.0
         questionDoneImage.layer.masksToBounds = true
         questionDoneLabel.textColor = UIColor(red: 109/255, green: 212/255, blue: 0/255, alpha: 1)
         
-        //Customizing teh textlabel of "Total Question Done"
-        questionDoneLabel.font = UIFont(name: "Poppins-Bold", size: 12)
+        //Customizing the textlabel of "Total Question Done"
+        questionDoneLabel.font = UIFont(name: "Poppins-Bold", size: 14)
         questionDoneLabel.text = "Questions"
         questionDoneLabel.textAlignment = .center
         
         //Customizing the label that displays the # of answers done
         numOfQuestionDone.textColor = .white
-        numOfQuestionDone.font = UIFont(name: "Poppins-Bold", size: 20)
+        numOfQuestionDone.font = UIFont(name: "Poppins-Bold", size: 16)
         numOfQuestionDone.textAlignment = .center
         
     }
@@ -142,12 +144,12 @@ class ProfileViewController: UIViewController {
         
     }
     
-    //Function to create a gradient image for th navigation bar, called frmo setUpNavBar
+    //Function to create a gradient image for th navigation bar, called from setUpNavBar
     //Woelmer, Mike, Adding a Gradient Background to UINavigationBar on iOS, Online Article, https://spin.atomicobject.com/2018/06/21/resize-navbar-gradient-ios/
     func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
         //Variabkle of gradientImage as UIImage
         var gradientImage:UIImage?
-        //Creating a Graphical gradient image through the input of colors and generating and image that can be palced on the navigation bar at the top
+        //Creating a Graphical gradient image through the input of colors and generating and image that can be placed on the navigation bar at the top
         UIGraphicsBeginImageContext(gradientLayer.frame.size)
         if let context = UIGraphicsGetCurrentContext() {
             gradientLayer.render(in: context)
@@ -174,7 +176,7 @@ class ProfileViewController: UIViewController {
             gradient.frame = bounds
             //Selecting the 2 colors that is needed in for the gradient
             gradient.colors = [UIColor(red: 255/255, green: 121/255, blue: 0/255, alpha: 1).cgColor, UIColor(red: 255/255, green: 182/255, blue: 0/255, alpha: 1).cgColor]
-            //Stating the start point and the end points of the gradient to control the direction thtat the gradient goes at
+            //Stating the start point and the end points of the gradient to control the direction that the gradient goes at
             gradient.startPoint = CGPoint(x: 0, y: 1)
             gradient.endPoint = CGPoint(x: 0, y: 0)
 
@@ -207,7 +209,7 @@ class ProfileViewController: UIViewController {
             //Firebase authentication signout
             try! Auth.auth().signOut()
             //Segue to LoginViewController
-            let signInViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? SignInViewConttroller
+            let signInViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? SignInViewController
             
             self.view.window?.rootViewController = signInViewController
             self.view.window?.makeKeyAndVisible()
@@ -260,7 +262,7 @@ class ProfileViewController: UIViewController {
                 }
                 
                 //Segue the user back to the login screen
-                let signInViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? SignInViewConttroller
+                let signInViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? SignInViewController
                 
                 self.view.window?.rootViewController = signInViewController
                 self.view.window?.makeKeyAndVisible()

@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-class SignInViewConttroller: UIViewController {
+class SignInViewController: UIViewController {
     
     //Linking UIView Elements outlets to the code from storyboard
     @IBOutlet weak var emailTextField: UITextField!
@@ -22,7 +22,7 @@ class SignInViewConttroller: UIViewController {
     var posts = [Post]()
     var postsCollectionRef: CollectionReference!
     
-    //FUnctions to call when view lods
+    //Functions to call when view lods
     override func viewDidLoad() {
         super.viewDidLoad()
         

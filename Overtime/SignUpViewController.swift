@@ -87,7 +87,7 @@ class SignUpViewController: UIViewController {
             
         }
         
-        //Keep up the password
+        //Cleaning up the password
         let passwordWithOutSpaces = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         //Validate password

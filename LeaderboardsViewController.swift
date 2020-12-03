@@ -53,7 +53,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
             
             //For-loop that loops through the documents within the snapshot recieved
             for document in snap.documents {
-                //settting each variable to the correct retreived field
+                //settting each variable to the correct retrieved field
                 let data = document.data()
                 let firstName = data["firstName"] as? String
                 let points = data["points"] as! Int
@@ -78,7 +78,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
             for j in 0..<array.count - 1 {
                 //Comparing the 2 points at the index, if the second one is larger then perfom a swap as we want it in descending order with the highest value at the top
                 if (array[j].points < array [j+1].points) {
-                    //Creating a temperary variable to store the smaller variable
+                    //Creating a temp variable to store the smaller variable
                     let temp = array[j]
                     //switching the variables
                     array[j] = array[j+1]
@@ -166,7 +166,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
             let label = UILabel()
             //Customizing label
             label.textColor = .white
-            label.text = "Leadeboards"
+            label.text = "Leaderboards"
             label.font = UIFont(name: "Poppins-Bold", size: 27)
             //Implementing the label on the left by passing it into a bar button with a custom view
             navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: label)

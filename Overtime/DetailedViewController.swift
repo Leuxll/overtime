@@ -36,7 +36,7 @@ class DetailedViewController: UIViewController {
         questionCollectionRef = Firestore.firestore().collection("posts").document(documentId).collection("questionAndAnswers")
         //When the image is not yet retreived from the database show a placeholderImage
         imageView.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "Default_Image_Thumbnail.png"))
-        //Calling functions for stylistic and customization purposes
+        //Calling functions for customization purposes
         Utilities.styleFilledButton(startButton)
         customLabel()
         customTextField()
@@ -109,7 +109,7 @@ class DetailedViewController: UIViewController {
             //removing that array item
             oldArray.remove(at: randomNumber)
         }
-        //settiong the Utilties.questions array that we were pulling from to the newArray
+        //setting the Utilties.questions array that we were pulling from to the newArray
         Utilities.questions = newArray
         
     }
@@ -133,7 +133,7 @@ class DetailedViewController: UIViewController {
         }
     }
     
-    //When the back button within this viewcontroller is pressed it would dismiss this viewcontroller and switch the view back to the homescreen. This calls the identified from the Constants class.
+    //When the back button within this viewcontroller is pressed it would dismiss this viewcontroller and switch the view back to the homescreen. This calls the id from the Constants class.
     @IBAction func backButtonTapped(_ sender: Any) {
         
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as? TabBarController

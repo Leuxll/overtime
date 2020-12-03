@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Customization call
 class Utilities {
     
     //Array to store all the questions
@@ -34,10 +35,11 @@ class Utilities {
         button.backgroundColor = UIColor.init(red: 255/255, green: 109/255, blue: 0/255, alpha: 1)
         button.layer.cornerRadius = 20.0
         button.tintColor = UIColor.white
-        button.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 18)
+        button.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 16)
     }
     
     //Function to make sure that the password that the user enters matches the requirements
+    //Ching, Chris, Firebase Authentication Tutorial 2020 - Custom iOS Login Page (Swift), YouTube Video, https://www.youtube.com/watch?v=1HN7usMROt8
     static func isPasswordValid(_ password : String) -> Bool {
         
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}")
