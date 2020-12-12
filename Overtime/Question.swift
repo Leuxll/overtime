@@ -11,12 +11,12 @@ import Foundation
 //Structure within array that contains questions and answers data
 struct Question {
     
-    let question: String
-    let answer1: String
-    let answer2: String
-    let answer3: String
-    let answer4: String
-    let correctAnswer: Int
+    private(set) var question: String
+    private(set) var answer1: String
+    private(set) var answer2: String
+    private(set) var answer3: String
+    private(set) var answer4: String
+    private(set) var correctAnswer: Int
     
 }
     

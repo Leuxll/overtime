@@ -11,11 +11,11 @@ import Foundation
 //Structure within array that contains posts data
 struct Post {
     
-    let imageUrl: String?
-    let playerName: String?
-    let points: String?
-    let difficulty: String?
-    let description: String?
-    let documentId: String?
+    private(set) var imageUrl: String?
+    private(set) var playerName: String?
+    private(set) var points: String?
+    private(set) var difficulty: String?
+    private(set) var description: String?
+    private(set) var documentId: String?
     
 }

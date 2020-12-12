@@ -11,9 +11,9 @@ import Foundation
 //Structure within array that contains users data
 struct User {
     
-    let firstName: String?
-    let lastName: String?
-    let points: Int!
-    let questionsAnswered: Int!
+    private(set) var firstName: String?
+    private(set) var lastName: String?
+    private(set) var points: Int!
+    private(set) var questionsAnswered: Int!
     
 }
