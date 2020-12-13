@@ -125,6 +125,8 @@ class DetailedViewController: UIViewController {
                 shuffleQuestions(arrayToBeShuffled: Utilities.questions)
                 let questionViewController = storyboard?.instantiateViewController(identifier:  Constants.Storyboard.questionViewController) as? QuestionsViewController
             
+                questionViewController?.quizName = playerName + " Quiz"
+                
                 view.window?.rootViewController = questionViewController
                 view.window?.makeKeyAndVisible()
                 arrayIsEmpty = false
@@ -137,6 +139,7 @@ class DetailedViewController: UIViewController {
     @IBAction func backButtonTapped(_ sender: Any) {
         
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.tabBarController) as? TabBarController
+        
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()

@@ -19,6 +19,8 @@
 		0E2C2C9A2494DA500001A54B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C2C992494DA500001A54B /* Constants.swift */; };
 		0E2C2C9E2494DAD30001A54B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2C2C9D2494DAD30001A54B /* HomeViewController.swift */; };
 		0E3BB60E249C8C8E003C1997 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3BB60D249C8C8E003C1997 /* Question.swift */; };
+		0EA2DCD72585AEC00015AAD4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA2DCD62585AEC00015AAD4 /* HistoryViewController.swift */; };
+		0EA2DCDF2585B0750015AAD4 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA2DCDE2585B0750015AAD4 /* HistoryTableViewCell.swift */; };
 		0EB738FE2493607F00F24E1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB738FD2493607F00F24E1F /* AppDelegate.swift */; };
 		0EB739002493607F00F24E1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB738FF2493607F00F24E1F /* SceneDelegate.swift */; };
 		0EB739022493607F00F24E1F /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB739012493607F00F24E1F /* SignInViewController.swift */; };
@@ -74,6 +76,8 @@
 		0E2C2C992494DA500001A54B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0E2C2C9D2494DAD30001A54B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0E3BB60D249C8C8E003C1997 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		0EA2DCD62585AEC00015AAD4 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		0EA2DCDE2585B0750015AAD4 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		0EB738FA2493607F00F24E1F /* Overtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB738FD2493607F00F24E1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB738FF2493607F00F24E1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 		0E198A49249870F30023AF62 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0EA2DCD62585AEC00015AAD4 /* HistoryViewController.swift */,
+				0EA2DCDE2585B0750015AAD4 /* HistoryTableViewCell.swift */,
 				0EDC3EC924A0592200D9D528 /* QuestionsViewController.swift */,
 				0E198A4E249890E00023AF62 /* DetailedViewController.swift */,
 				0E198A4C249871F80023AF62 /* LeaderboardsViewController.swift */,
@@ -556,11 +562,13 @@
 				0EDC3EC824A04CEC00D9D528 /* LeaderboardTableViewCell.swift in Sources */,
 				0E198A4D249871F80023AF62 /* LeaderboardsViewController.swift in Sources */,
 				0EC6EBA12493DB2500098180 /* Utilities.swift in Sources */,
+				0EA2DCD72585AEC00015AAD4 /* HistoryViewController.swift in Sources */,
 				0E198A4F249890E00023AF62 /* DetailedViewController.swift in Sources */,
 				0E3BB60E249C8C8E003C1997 /* Question.swift in Sources */,
 				0E198A432498566A0023AF62 /* ScaledHeightImageView.swift in Sources */,
 				0EDC3ECA24A0592200D9D528 /* QuestionsViewController.swift in Sources */,
 				0E2C2C982494A2150001A54B /* SignUpViewController.swift in Sources */,
+				0EA2DCDF2585B0750015AAD4 /* HistoryTableViewCell.swift in Sources */,
 				0EB739022493607F00F24E1F /* SignInViewController.swift in Sources */,
 				0E198A4B249871510023AF62 /* ProfileViewController.swift in Sources */,
 				0E2C2C9E2494DAD30001A54B /* HomeViewController.swift in Sources */,

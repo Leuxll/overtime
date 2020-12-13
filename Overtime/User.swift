@@ -17,3 +17,11 @@ struct User {
     private(set) var questionsAnswered: Int!
     
 }
+
+struct History {
+    
+    private(set) var quizInfo: String?
+    private(set) var score: String?
+    
+    
+}

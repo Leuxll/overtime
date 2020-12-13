@@ -25,6 +25,7 @@ class QuestionsViewController: UIViewController {
     var selectedAnswer: Int = 0
     var totalPoints: Int = 0
     var questionsAnswered: Int = 0
+    var quizName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +86,10 @@ class QuestionsViewController: UIViewController {
             let alert = UIAlertController(title: "Finished", message: "End of Quiz. Your score is: " + String(score), preferredStyle: .alert)
             let restartAction = UIAlertAction(title: "Return Home", style: .default, handler: { action in
                     self.updatingUserInfo()
-                    self.returnHome()})
+                    self.returnHome()
+                
+                    
+            })
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
             
@@ -110,7 +114,26 @@ class QuestionsViewController: UIViewController {
                 } else {
                     print("Document successfully updated")
                 }
+                
+                let date = Date()
+                let calendar = Calendar.current
+                let hour = calendar.component(.hour, from: date)
+                let mins = calendar.component(.minute, from: date)
+                let day = calendar.component(.day, from: date)
+                let month = calendar.component(.month, from: date)
+                let year = calendar.component(.year, from: date)
             
+                currentUser.collection("history").addDocument(data: ["quizName" : quizName, "points": String(score) + "/" + String(allQuestions.count), "time": String(month) + "/" + String(day) + "/" + String(year) + " " + String(hour) + ":" + String(mins)]) { (error) in
+                    
+                    if error != nil {
+                        print("Error updating document: \(String(describing: error))")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                    
+                }
+                
+                
         }
         
     }

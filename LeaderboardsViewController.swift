@@ -9,18 +9,10 @@
 import UIKit
 import Firebase
 
-//Structure for the leaderboard user
-struct LeaderboardUser {
-    
-    let firstName: String?
-    let points: Int!
-    
-}
-
 class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //Initializing the varibles used within the LeaderboardsViewController
-    var users = [LeaderboardUser]()
+    var users = [User]()
     var userCollectionRef: CollectionReference!
     
     //Linking UIView Elements outlets to the code from storyboard
@@ -58,7 +50,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
                 let firstName = data["firstName"] as? String
                 let points = data["points"] as! Int
                 //Appending the information above to the array list
-                self.users.append(LeaderboardUser(firstName: firstName, points: points))
+                self.users.append(User.init(firstName: firstName, lastName: "", points: points, questionsAnswered: 0))
                 //Setting the users array to the merge sorted array
                 self.users = self.bubbleSort(arr: self.users)
                 //Reloading the tableview to reflect the sorted users according to points
@@ -70,7 +62,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     //bubble sorting function called when retrieving the appending the array
-    func bubbleSort(arr: [LeaderboardUser]) -> [LeaderboardUser] {
+    func bubbleSort(arr: [User]) -> [User] {
         var array = arr
         //For-loop to loop throught the array count from 0 to array.count - 1
         for _ in 0..<array.count - 1 {

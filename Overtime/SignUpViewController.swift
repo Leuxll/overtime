@@ -133,10 +133,10 @@ class SignUpViewController: UIViewController {
                 } else {
                     
                     //Call Firestore
-                    let db = Firestore.firestore()
+                    let db = Firestore.firestore().collection("users")
                     
                     //Append new user ot the firestore collection, with random generated ID
-                    db.collection("users").document((result?.user.uid)!).setData(["firstName":firstName, "lastName":lastName, "uid": result!.user.uid, "points": 0,"questionsAnswered": 0]) { (error) in
+                    db.document((result?.user.uid)!).setData(["firstName":firstName, "lastName":lastName, "uid": result!.user.uid, "points": 0,"questionsAnswered": 0]) { (error) in
                         
                         
                         if error != nil {
@@ -147,6 +147,7 @@ class SignUpViewController: UIViewController {
                         }
                         
                     }
+                    
                     //else Call transition to transition to homescreen
                     self.transition()
                     

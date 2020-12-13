@@ -43,6 +43,7 @@ class ProfileViewController: UIViewController {
         Utilities.styleFilledButton(signOutButton)
         //Calling the function to actually fetch the data of the current user
         fetchUserInfo()
+        navigationController?.navigationBar.tintColor = .white
         
     }
     
