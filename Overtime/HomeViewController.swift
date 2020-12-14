@@ -18,7 +18,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //Initializing the varibles used within the HomeViewController
     var posts =  [Post]()
     var postsCollectionRef: CollectionReference!
-    var usersCollectionRef: CollectionReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()

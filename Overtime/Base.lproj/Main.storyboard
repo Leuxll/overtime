@@ -584,7 +584,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sJv-ed-Ro8">
-                                <rect key="frame" x="0.0" y="122" width="414" height="691"/>
+                                <rect key="frame" x="0.0" y="175" width="414" height="638"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="66" id="yDg-pN-xUz" customClass="LeaderboardTableViewCell" customModule="Overtime" customModuleProvider="target">
@@ -634,18 +634,32 @@
                                     <outlet property="delegate" destination="1fe-U7-nWp" id="2tB-bg-iwt"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P8v-GM-Sji">
+                                <rect key="frame" x="20" y="136" width="374" height="32"/>
+                                <segments>
+                                    <segment title="By Points"/>
+                                    <segment title="By Questions Answered"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControlDidChange:" destination="1fe-U7-nWp" eventType="valueChanged" id="ga2-PT-UeI"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yxD-Xg-GmQ"/>
                         <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sJv-ed-Ro8" secondAttribute="trailing" id="J5E-XZ-a5b"/>
-                            <constraint firstItem="sJv-ed-Ro8" firstAttribute="top" secondItem="yxD-Xg-GmQ" secondAttribute="top" id="PPb-7P-Dud"/>
+                            <constraint firstItem="P8v-GM-Sji" firstAttribute="leading" secondItem="TWE-Kd-IRi" secondAttribute="leadingMargin" id="K7D-PN-g3u"/>
+                            <constraint firstItem="sJv-ed-Ro8" firstAttribute="top" secondItem="yxD-Xg-GmQ" secondAttribute="top" constant="53" id="PPb-7P-Dud"/>
+                            <constraint firstItem="P8v-GM-Sji" firstAttribute="centerX" secondItem="sJv-ed-Ro8" secondAttribute="centerX" id="eNB-NE-DLz"/>
+                            <constraint firstItem="sJv-ed-Ro8" firstAttribute="top" secondItem="P8v-GM-Sji" secondAttribute="bottom" constant="8" symbolic="YES" id="ncC-in-hf7"/>
                             <constraint firstItem="sJv-ed-Ro8" firstAttribute="leading" secondItem="TWE-Kd-IRi" secondAttribute="leading" id="tSU-hR-V0t"/>
                             <constraint firstItem="sJv-ed-Ro8" firstAttribute="bottom" secondItem="yxD-Xg-GmQ" secondAttribute="bottom" id="wC4-qE-ogA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" prompt="                                      " id="4ay-IG-wHQ"/>
                     <connections>
+                        <outlet property="segmentControl" destination="P8v-GM-Sji" id="uHl-8T-5an"/>
                         <outlet property="tableView" destination="sJv-ed-Ro8" id="y3n-Gx-tXs"/>
                     </connections>
                 </viewController>

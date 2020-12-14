@@ -13,9 +13,12 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
 
     //Initializing the varibles used within the LeaderboardsViewController
     var users = [User]()
+    var sortedByPoints = [User]()
+    var sortedByQuestionsAnswered = [User]()
     var userCollectionRef: CollectionReference!
     
     //Linking UIView Elements outlets to the code from storyboard
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
     //Functions to call when view loads
@@ -31,6 +34,12 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         //Setting properties of the tableView
         tableView.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
         tableView.allowsSelection = false
+        view.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
+        segmentControl.backgroundColor = UIColor.init(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
+        segmentControl.selectedSegmentTintColor = UIColor(red: 255/255, green: 109/255, blue: 0/255, alpha: 1)
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            segmentControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
+            segmentControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
         
         
     }
@@ -49,10 +58,12 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
                 let data = document.data()
                 let firstName = data["firstName"] as? String
                 let points = data["points"] as! Int
+                let questionsAnswered = data["questionsAnswered"] as! Int
                 //Appending the information above to the array list
-                self.users.append(User.init(firstName: firstName, lastName: "", points: points, questionsAnswered: 0))
+                self.users.append(User.init(firstName: firstName, lastName: "", points: points, questionsAnswered: questionsAnswered))
                 //Setting the users array to the merge sorted array
-                self.users = self.bubbleSort(arr: self.users)
+                self.sortedByPoints = self.bubbleSortByPoints(arr: self.users)
+                self.sortedByQuestionsAnswered = self.bubbleSortByQuestionsAnswered(arr: self.users)
                 //Reloading the tableview to reflect the sorted users according to points
                 self.tableView.reloadData()
             }
@@ -62,7 +73,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     //bubble sorting function called when retrieving the appending the array
-    func bubbleSort(arr: [User]) -> [User] {
+    func bubbleSortByPoints(arr: [User]) -> [User] {
         var array = arr
         //For-loop to loop throught the array count from 0 to array.count - 1
         for _ in 0..<array.count - 1 {
@@ -82,12 +93,41 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         return array
     }
     
+    //bubble sorting function called when retrieving the appending the array
+    func bubbleSortByQuestionsAnswered(arr: [User]) -> [User] {
+        var array = arr
+        //For-loop to loop throught the array count from 0 to array.count - 1
+        for _ in 0..<array.count - 1 {
+            //Second-loop to find the second index
+            for j in 0..<array.count - 1 {
+                //Comparing the 2 points at the index, if the second one is larger then perfom a swap as we want it in descending order with the highest value at the top
+                if (array[j].questionsAnswered < array [j+1].questionsAnswered) {
+                    //Creating a temp variable to store the smaller variable
+                    let temp = array[j]
+                    //switching the variables
+                    array[j] = array[j+1]
+                    array[j+1] = temp
+                }
+            }
+        }
+        //returning the new sorted array
+        return array
+    }
+    
     //Setting the tableview up with designated protocals
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //Setting the number of items to arrays count
-        users.count
-        
+        switch segmentControl.selectedSegmentIndex {
+        //Different cases for the segmented control
+        case 0:
+            return sortedByPoints.count
+        case 1:
+            return sortedByQuestionsAnswered.count
+        default:
+            break
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,14 +135,30 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         //Populating the set numberOfRows with cells of information
        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? LeaderboardTableViewCell {
         
-        //Setting each of the items in the cell to the appropriate value
-        cell.firstName.text = users[indexPath.row].firstName
-        cell.points.text = String(users[indexPath.row].points) + " points"
-        //customizing the cells
-        cell.configureCell()
-        cell.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
-        return cell
+        switch segmentControl.selectedSegmentIndex {
+        //Different cases for the segmented control
+        case 0:
+            //Setting each of the items in the cell to the appropriate value
+            cell.firstName.text = sortedByPoints[indexPath.row].firstName
+            cell.points.text = String(sortedByPoints[indexPath.row].points) + " points"
+            //customizing the cells
+            cell.configureCell()
+            cell.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
+            return cell
+        case 1:
+            //Setting each of the items in the cell to the appropriate value
+            cell.firstName.text = sortedByQuestionsAnswered[indexPath.row].firstName
+            cell.points.text = String(sortedByQuestionsAnswered[indexPath.row].questionsAnswered) + " points"
+            //customizing the cells
+            cell.configureCell()
+            cell.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
+            return cell
+        default:
+            break
+        }
     
+        return cell
+        
        } else {
         
         //if there are no values just return a UITableViewCell()
@@ -166,5 +222,10 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         }
     
     }
-
+    
+    @IBAction func segmentControlDidChange(_ sender: Any) {
+        //When the segmentControl is tapped, it reloads the table
+        tableView.reloadData()
+    }
+    
 }
