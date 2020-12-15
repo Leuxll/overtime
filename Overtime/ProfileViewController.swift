@@ -29,8 +29,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionDoneLabel.sizeToFit()
-        numOfQuestionDone.sizeToFit()
         //Reference to the specific document reference path that store the current users information
         userDocumentReference = Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid)
         

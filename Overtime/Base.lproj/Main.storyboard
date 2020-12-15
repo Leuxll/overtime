@@ -665,7 +665,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxc-hL-eti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5539.130434782609" y="420.53571428571428"/>
+            <point key="canvasLocation" x="5332" y="421"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="viJ-d7-eM7">
@@ -935,7 +935,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dfc-Ao-d4f">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gMp-yv-w99" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LeaderBoardViewController" automaticallyAdjustsScrollViewInsets="NO" id="gMp-yv-w99" customClass="NavigationController" customModule="Overtime" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="chart.bar.fill" catalog="system" id="jap-Yc-F1z">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
