@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().titleTextAttributes = navigationAttributes as [NSAttributedString.Key : Any]
         UINavigationBar.appearance().alignmentRect(forFrame: CGRect(x: 37, y: 33, width: 321, height: 63))
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
 
         return true
     }

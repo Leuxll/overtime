@@ -37,9 +37,10 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         view.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
         segmentControl.backgroundColor = UIColor.init(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
         segmentControl.selectedSegmentTintColor = UIColor(red: 255/255, green: 109/255, blue: 0/255, alpha: 1)
-        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-            segmentControl.setTitleTextAttributes(titleTextAttributes, for: .normal)
-            segmentControl.setTitleTextAttributes(titleTextAttributes, for: .selected)
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+                                   NSAttributedString.Key.font: UIFont.init(name: "Poppins-Bold", size: 12)]
+        segmentControl.setTitleTextAttributes(titleTextAttributes as [NSAttributedString.Key : Any], for: .normal)
+        segmentControl.setTitleTextAttributes(titleTextAttributes as [NSAttributedString.Key : Any], for: .selected)
         
         
     }

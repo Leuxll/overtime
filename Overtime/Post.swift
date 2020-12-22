@@ -17,5 +17,6 @@ struct Post {
     private(set) var difficulty: String?
     private(set) var description: String?
     private(set) var documentId: String?
+    private(set) var type: String?
     
 }

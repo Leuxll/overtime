@@ -35,7 +35,7 @@ class SignInViewController: UIViewController {
         //Gesture controller to dismiss keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
+    
     }
     
     //sign in when button is tapped

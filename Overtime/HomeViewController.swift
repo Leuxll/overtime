@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     //Linking UIView Elements outlets to the code from storyboard
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
     //Initializing the varibles used within the HomeViewController
     var posts =  [Post]()
@@ -38,6 +39,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //Making sure the Utilites.question is cleared when the user returns to the homescrren after a quiz
         Utilities.questions.removeAll()
         
+        view.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
+        segmentControl.backgroundColor = UIColor.init(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
+        segmentControl.selectedSegmentTintColor = UIColor(red: 255/255, green: 109/255, blue: 0/255, alpha: 1)
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+                                   NSAttributedString.Key.font: UIFont.init(name: "Poppins-Bold", size: 12)]
+        segmentControl.setTitleTextAttributes(titleTextAttributes as [NSAttributedString.Key : Any], for: .normal)
+        segmentControl.setTitleTextAttributes(titleTextAttributes as [NSAttributedString.Key : Any], for: .selected)
         
     }
     
@@ -59,10 +67,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 let imageUrl = data["imageUrl"] as! String
                 let description = data["description"] as! String
                 let points = data["points"] as! String
+                let type  = data["type"] as! String
                 let documentId = document.documentID
                 
                 //Appending the information above to the array list
-                self.posts.append(Post(imageUrl: imageUrl, playerName: playerName, points: points, difficulty: difficulty, description: description, documentId: documentId))
+                self.posts.append(Post(imageUrl: imageUrl, playerName: playerName, points: points, difficulty: difficulty, description: description, documentId: documentId, type: type))
                 //Reloading the collectionView to show the correct data
                 self.collectionView.reloadData()
             }
@@ -75,22 +84,57 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         //Setting the number of items to arrays count
-        return posts.count
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            return posts.count
+        case 1:
+            let byPlayer = posts.filter({ return $0.type == "player"})
+            return byPlayer.count
+        case 2:
+            let byTeam = posts.filter({ return $0.type == "team"})
+            return byTeam.count
+        default:
+            break
+        }
+        return 0
         
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         //Populating the set numberOfRows with cells of information
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PostCell {
             
-            //Setting each of the items in teh cell to the appropriate value
-            cell.imageView.sd_setImage(with: URL(string: posts[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "Default_Image_Thumbnail.png"))
-            cell.difficultyLabel.text = posts[indexPath.row].difficulty
-            cell.nameLabel.text = posts[indexPath.row].playerName
-            cell.pointsLabel.text = posts[indexPath.row].points
-            //Customizing the cells
-            cell.configureCell()
+            //Setting each of the items in the cell to the appropriate value
+            switch segmentControl.selectedSegmentIndex {
+            case 0:
+                cell.imageView.sd_setImage(with: URL(string: posts[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "Default_Image_Thumbnail.png"))
+                cell.difficultyLabel.text = posts[indexPath.row].difficulty
+                cell.nameLabel.text = posts[indexPath.row].playerName
+                cell.pointsLabel.text = posts[indexPath.row].points
+                //Customizing the cells
+                cell.configureCell()
+            case 1:
+                let byPlayer = posts.filter({ return $0.type == "player"})
+                cell.imageView.sd_setImage(with: URL(string: byPlayer[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "Default_Image_Thumbnail.png"))
+                cell.difficultyLabel.text = byPlayer[indexPath.row].difficulty
+                cell.nameLabel.text = byPlayer[indexPath.row].playerName
+                cell.pointsLabel.text = byPlayer[indexPath.row].points
+                //Customizing the cells
+                cell.configureCell()
+            case 2:
+                let byTeam = posts.filter({ return $0.type == "team"})
+                cell.imageView.sd_setImage(with: URL(string: byTeam[indexPath.row].imageUrl!), placeholderImage: UIImage(named: "Default_Image_Thumbnail.png"))
+                cell.difficultyLabel.text = byTeam[indexPath.row].difficulty
+                cell.nameLabel.text = byTeam[indexPath.row].playerName
+                cell.pointsLabel.text = byTeam[indexPath.row].points
+                //Customizing the cells
+                cell.configureCell()
+            default:
+                break
+            }
+            
             return cell
             
         } else {
@@ -162,16 +206,38 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         //Initiating the detailedViewController that would be segued once the cards are tapped on
         let detailViewController = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.detailedViewController) as! DetailedViewController
         
-        //Transferring data with through the segue
-        detailViewController.imageUrl = posts[indexPath.row].imageUrl!
-        detailViewController.detailedDescription = posts[indexPath.row].description!
-        detailViewController.playerName = posts[indexPath.row].playerName!
-        detailViewController.documentId = posts[indexPath.row].documentId!
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            //Transferring data with through the segue
+            detailViewController.imageUrl = posts[indexPath.row].imageUrl!
+            detailViewController.detailedDescription = posts[indexPath.row].description!
+            detailViewController.playerName = posts[indexPath.row].playerName!
+            detailViewController.documentId = posts[indexPath.row].documentId!
+        case 1:
+            let byPlayer = posts.filter({ return $0.type == "player"})
+            //Transferring data with through the segue
+            detailViewController.imageUrl = byPlayer[indexPath.row].imageUrl!
+            detailViewController.detailedDescription = byPlayer[indexPath.row].description!
+            detailViewController.playerName = byPlayer[indexPath.row].playerName!
+            detailViewController.documentId = byPlayer[indexPath.row].documentId!
+        case 2:
+            let byTeam = posts.filter({ return $0.type == "team"})
+            //Transferring data with through the segue
+            detailViewController.imageUrl = byTeam[indexPath.row].imageUrl!
+            detailViewController.detailedDescription = byTeam[indexPath.row].description!
+            detailViewController.playerName = byTeam[indexPath.row].playerName!
+            detailViewController.documentId = byTeam[indexPath.row].documentId!
+        default:
+            break
+        }
         
         //Making the DetailedViewControllerview visible to the user
         view.window?.rootViewController = detailViewController
         view.window?.makeKeyAndVisible()
         
     }
-
+    @IBAction func segmentControlTapped(_ sender: Any) {
+        collectionView.reloadData()
+    }
+    
 }
