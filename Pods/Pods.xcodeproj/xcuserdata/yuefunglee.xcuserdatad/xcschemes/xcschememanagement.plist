@@ -32,11 +32,6 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>FirebaseAuthInterop.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>27</integer>
-		</dict>
 		<key>FirebaseCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -50,11 +45,6 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
-		</dict>
-		<key>FirebaseCoreDiagnosticsInterop.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>28</integer>
 		</dict>
 		<key>FirebaseDatabase.xcscheme</key>
 		<dict>
@@ -84,11 +74,6 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
-		<key>FirebaseInstanceID.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>29</integer>
-		</dict>
 		<key>FirebaseStorage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -116,11 +101,6 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
-		</dict>
-		<key>GoogleDataTransportCCTSupport.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>30</integer>
 		</dict>
 		<key>GoogleUtilities.xcscheme</key>
 		<dict>

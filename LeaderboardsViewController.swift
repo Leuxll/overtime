@@ -149,7 +149,7 @@ class LeaderboardsViewController: UIViewController, UITableViewDelegate, UITable
         case 1:
             //Setting each of the items in the cell to the appropriate value
             cell.firstName.text = sortedByQuestionsAnswered[indexPath.row].firstName
-            cell.points.text = String(sortedByQuestionsAnswered[indexPath.row].questionsAnswered) + " points"
+            cell.points.text = String(sortedByQuestionsAnswered[indexPath.row].questionsAnswered) + " questions"
             //customizing the cells
             cell.configureCell()
             cell.backgroundColor = UIColor.init(red: 18/255, green: 18/255, blue: 18/255, alpha: 1)
