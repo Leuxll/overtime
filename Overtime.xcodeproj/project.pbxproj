@@ -159,6 +159,10 @@
 		0E198A48249870CA0023AF62 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				0EA2DCDE2585B0750015AAD4 /* HistoryTableViewCell.swift */,
+				0E198A442498682C0023AF62 /* TabBarController.swift */,
+				0EDC3EC724A04CEC00D9D528 /* LeaderboardTableViewCell.swift */,
+				0E198A0424976F360023AF62 /* PostCell.swift */,
 				0EC6EB852493C72700098180 /* TabBarCustomizations.swift */,
 				0E198A422498566A0023AF62 /* ScaledHeightImageView.swift */,
 				0E2C2C992494DA500001A54B /* Constants.swift */,
@@ -170,18 +174,13 @@
 		0E198A49249870F30023AF62 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0EC3F48D25EA3C5A009544BE /* Authentication */,
+				0E2C2C9D2494DAD30001A54B /* HomeViewController.swift */,
 				0EA2DCD62585AEC00015AAD4 /* HistoryViewController.swift */,
-				0EA2DCDE2585B0750015AAD4 /* HistoryTableViewCell.swift */,
 				0EDC3EC924A0592200D9D528 /* QuestionsViewController.swift */,
 				0E198A4E249890E00023AF62 /* DetailedViewController.swift */,
 				0E198A4C249871F80023AF62 /* LeaderboardsViewController.swift */,
 				0E198A4A249871510023AF62 /* ProfileViewController.swift */,
-				0E2C2C9D2494DAD30001A54B /* HomeViewController.swift */,
-				0EB739012493607F00F24E1F /* SignInViewController.swift */,
-				0E2C2C972494A2150001A54B /* SignUpViewController.swift */,
-				0E198A442498682C0023AF62 /* TabBarController.swift */,
-				0EDC3EC724A04CEC00D9D528 /* LeaderboardTableViewCell.swift */,
-				0E198A0424976F360023AF62 /* PostCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -252,6 +251,15 @@
 				0EB739232493608100F24E1F /* Info.plist */,
 			);
 			path = OvertimeUITests;
+			sourceTree = "<group>";
+		};
+		0EC3F48D25EA3C5A009544BE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0EB739012493607F00F24E1F /* SignInViewController.swift */,
+				0E2C2C972494A2150001A54B /* SignUpViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		0EC6EB872493D2B000098180 /* Fonts */ = {
