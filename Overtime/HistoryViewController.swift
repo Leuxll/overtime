@@ -2,8 +2,8 @@
 //  HistoryViewController.swift
 //  Overtime
 //
-//  Created by Yue Fung Lee on 13/12/2020.
-//  Copyright © 2020 Yue Fung Lee. All rights reserved.
+//  Created by YFL on 13/12/2020.
+//  Copyright © 2020 YFL. All rights reserved.
 //
 
 import UIKit

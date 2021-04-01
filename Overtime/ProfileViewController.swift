@@ -2,8 +2,8 @@
 //  ProfileViewController.swift
 //  Overtime
 //
-//  Created by Yue Fung Lee on 16/6/2020.
-//  Copyright © 2020 Yue Fung Lee. All rights reserved.
+//  Created by YFL on 16/6/2020.
+//  Copyright © 2020 YFL. All rights reserved.
 //
 
 import UIKit
